@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // REMOVE output: 'export' - Let Vercel handle the rendering automatically
+  output: 'export',
   images: {
     unoptimized: true
-  }
+  },
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
