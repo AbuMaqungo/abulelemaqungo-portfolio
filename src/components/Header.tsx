@@ -12,7 +12,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo with your full name */}
           <Link href="/" className="text-xl font-bold text-white">
-            Abulele Maqungo
+            AM
           </Link>
 
           {/* Desktop Navigation - More tabs */}
