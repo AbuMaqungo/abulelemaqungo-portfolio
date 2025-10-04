@@ -26,11 +26,11 @@ export default function Contact() {
 
   return (
     <div className="container py-12">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8">Contact Me</h1>
+      <h1 className="text-4xl font-bold text-white-800 mb-8">Contact Me</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Get in Touch</h2>
-          <p className="text-gray-600 mb-6">
+          <h2 className="text-2xl font-bold text-white-800 mb-4">Get in Touch</h2>
+          <p className="text-white-600 mb-6">
             I'm always interested in new opportunities and collaborations. 
             Feel free to reach out if you'd like to work together or just say hello!
           </p>
@@ -59,7 +59,7 @@ export default function Contact() {
         <div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-white-700 mb-1">
                 Name
               </label>
               <input
@@ -69,11 +69,11 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-white-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-white-700 mb-1">
                 Email
               </label>
               <input
