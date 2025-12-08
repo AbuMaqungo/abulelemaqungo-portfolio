@@ -74,7 +74,7 @@ export default function About() {
                   <div className="text-slate-400">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400 mb-2">20+</div>
+                  <div className="text-3xl font-bold text-green-400 mb-2">10+</div>
                   <div className="text-slate-400">Projects Completed</div>
                 </div>
                 <div className="text-center">
