@@ -60,8 +60,7 @@ export const personalData = {
   socialLinks: {
     linkedin: "https://linkedin.com/in/abulele-maqungo-53938b241",
     github: "https://github.com/AbuMaqungo", 
-    twitter: "https://x.com/AbuMaqungo",
-    facebook: ""  
+    twitter: "https://x.com/AbuMaqungo"  
   },
 
   cvPath: "/docs/abulele-maqungo-cv.pdf" // You'll add this file later
