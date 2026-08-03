@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Abulele Maqungo - Application Developer',
-  description: 'Professional Application Developer specializing in full-stack development, API design, and database solutions',
+  description: 'Application Developer specializing in full-stack development, REST API design, SQL programming and cloud-native deployment.',
 };
 
 export default function RootLayout({
