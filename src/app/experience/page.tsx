@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-// Experience data
+// Experience data with updated categories
 const experiences = [
   {
     id: 1,
@@ -10,7 +10,7 @@ const experiences = [
     role: 'Application Developer',
     period: '01 April 2026 – Current',
     location: 'Cape Town, South Africa',
-    type: 'self-employed',
+    category: 'freelance',
     description: [
       'Application Support & End-User Training',
       'Building full-stack web applications for clients across multiple industries',
@@ -43,7 +43,7 @@ const experiences = [
     role: 'System Testing Specialist',
     period: '15 December 2025 – 31 March 2026',
     location: 'Pretoria, South Africa',
-    type: 'contract',
+    category: 'dha',
     description: [
       'API Testing & Validation using Postman across all development streams',
       'Regression Testing for DHA Live Capture (Front Office & Back Office)',
@@ -72,7 +72,7 @@ const experiences = [
     role: 'System Support & Database Administrator',
     period: '01 September 2023 – 12 December 2025',
     location: 'Pretoria, South Africa',
-    type: 'full-time',
+    category: 'dha',
     description: [
       'Installing new applications, updating and patching existing applications',
       'Application support and sustenance for production environments across multiple business areas',
@@ -101,7 +101,7 @@ const experiences = [
     role: 'IT Technical Support: Desktop & Network',
     period: '24 November 2022 – 31 August 2023',
     location: 'Pretoria, South Africa',
-    type: 'full-time',
+    category: 'dha',
     description: [
       'Video conference configuration and troubleshooting using CISCO Unified CM Administration',
       'First and second line support using BCM Remedy IT Service',
@@ -128,7 +128,7 @@ const experiences = [
     role: 'Aircraft Avionician',
     period: '14 October 2013 – 05 December 2013',
     location: 'Wonderboom National Airport, South Africa',
-    type: 'contract',
+    category: 'aviation',
     description: [
       'Validated ULB/Black Box functionality per SARP requirements for accident data preservation compliance',
       'Fault-finding on aircraft wiring looms and avionics bus connections utilizing AWM and CAA-approved procedures',
@@ -147,7 +147,7 @@ const experiences = [
     role: 'Aircraft Avionician',
     period: '04 February 2013 – 11 October 2013',
     location: 'Lanseria International Airport, South Africa',
-    type: 'contract',
+    category: 'aviation',
     description: [
       'Tested and validated Underwater Locator Beacon (ULB) and Flight Data Recorder (Black Box)',
       'Validated ULB/Black Box functionality per SARP requirements for accident data preservation compliance',
@@ -166,7 +166,7 @@ const experiences = [
     role: 'Aircraft Avionician',
     period: '24 October 2011 – 01 February 2013',
     location: 'OR Tambo International Airport, South Africa',
-    type: 'full-time',
+    category: 'aviation',
     description: [
       'Executed Pitot-Static system pressure tests using digital manometers and computerized test equipment',
       'Systematic fault diagnosis on aircraft electrical wiring networks using technical schematics',
@@ -188,7 +188,7 @@ const experiences = [
     role: 'Aircraft Avionician — Trade Foundation Programme',
     period: '24 January 2011 – 14 October 2011',
     location: 'OR Tambo International Airport, South Africa',
-    type: 'contract',
+    category: 'aviation',
     description: [
       'Studied Mechanics of Flight and Trade Theory in accordance with Manpower Training Act 1981',
       'Completed structured training in Basic Electronics and Basic Digital Techniques',
@@ -238,23 +238,23 @@ export default function ExperiencePage() {
 
   const filteredExperiences = filter === 'all' 
     ? experiences 
-    : experiences.filter(exp => exp.type === filter)
+    : experiences.filter(exp => exp.category === filter)
 
-  const getTypeColor = (type: string) => {
-    switch(type) {
-      case 'self-employed': return 'bg-purple-500/10 text-purple-400 border-purple-500/20'
-      case 'contract': return 'bg-orange-500/10 text-orange-400 border-orange-500/20'
-      case 'full-time': return 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+  const getCategoryColor = (category: string) => {
+    switch(category) {
+      case 'freelance': return 'bg-purple-500/10 text-purple-400 border-purple-500/20'
+      case 'dha': return 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+      case 'aviation': return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
       default: return 'bg-gray-500/10 text-gray-400 border-gray-500/20'
     }
   }
 
-  const getTypeLabel = (type: string) => {
-    switch(type) {
-      case 'self-employed': return 'Self-Employed'
-      case 'contract': return 'Contract'
-      case 'full-time': return 'Full-Time'
-      default: return type
+  const getCategoryLabel = (category: string) => {
+    switch(category) {
+      case 'freelance': return 'Freelance'
+      case 'dha': return 'Department of Home Affairs'
+      case 'aviation': return 'Aviation'
+      default: return category
     }
   }
 
@@ -308,34 +308,34 @@ export default function ExperiencePage() {
             All Experience
           </button>
           <button
-            onClick={() => setFilter('self-employed')}
+            onClick={() => setFilter('freelance')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              filter === 'self-employed' 
+              filter === 'freelance' 
                 ? 'bg-purple-600 text-white' 
                 : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-purple-500/50'
             }`}
           >
-            Self-Employed
+            Self-Employed (Freelancer)
           </button>
           <button
-            onClick={() => setFilter('contract')}
+            onClick={() => setFilter('dha')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              filter === 'contract' 
-                ? 'bg-orange-600 text-white' 
-                : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-orange-500/50'
-            }`}
-          >
-            Contract
-          </button>
-          <button
-            onClick={() => setFilter('full-time')}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              filter === 'full-time' 
+              filter === 'dha' 
                 ? 'bg-blue-600 text-white' 
                 : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-blue-500/50'
             }`}
           >
-            Full-Time
+            Department of Home Affairs
+          </button>
+          <button
+            onClick={() => setFilter('aviation')}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              filter === 'aviation' 
+                ? 'bg-emerald-600 text-white' 
+                : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-emerald-500/50'
+            }`}
+          >
+            Aviation
           </button>
         </div>
 
@@ -357,8 +357,8 @@ export default function ExperiencePage() {
                       <h2 className="text-xl font-semibold text-white">
                         {exp.role}
                       </h2>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getTypeColor(exp.type)}`}>
-                        {getTypeLabel(exp.type)}
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getCategoryColor(exp.category)}`}>
+                        {getCategoryLabel(exp.category)}
                       </span>
                     </div>
                     
