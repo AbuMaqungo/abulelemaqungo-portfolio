@@ -121,7 +121,7 @@ export default function Projects() {
               rel="noopener noreferrer"
               className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center text-sm"
             >
-              View Live Site →
+              Visit iQula Lakwa Ntu
             </a>
           </div>
         ))}
