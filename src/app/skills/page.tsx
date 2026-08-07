@@ -10,7 +10,7 @@ export default function Skills() {
     },
     {
       category: "Databases",
-      skills: ["PostgreSQL (Neon)", "Azure SQL Database", "Microsoft SQL Server", "MySQL"],
+      skills: ["PostgreSQL (Neon)", "Azure SQL Database", "Microsoft SQL Server", "MySQL", "SQLAlchemy"],
     },
     {
       category: "DevOps & Infrastructure",
