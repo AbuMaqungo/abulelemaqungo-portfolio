@@ -258,21 +258,12 @@ export default function ExperiencePage() {
     }
   }
 
-  const getTypeEmoji = (type: string) => {
-    switch(type) {
-      case 'self-employed': return '🚀'
-      case 'contract': return '📋'
-      case 'full-time': return '💼'
-      default: return '📌'
-    }
-  }
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
             Professional Experience
           </h1>
           <p className="text-gray-400 text-lg max-w-4xl leading-relaxed">
@@ -290,17 +281,15 @@ export default function ExperiencePage() {
 
         {/* Core Competencies */}
         <div className="mb-12 bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
-          <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="text-blue-400">⭐</span>
+          <h2 className="text-lg font-semibold text-white mb-4 tracking-tight">
             Core Competencies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {coreCompetencies.map((skill, index) => (
               <div 
                 key={index}
-                className="flex items-center gap-2 bg-[#2a2a2a] px-3 py-2 rounded-lg border border-[#333] hover:border-blue-500/30 transition-colors"
+                className="bg-[#2a2a2a] px-3 py-2 rounded-lg border border-[#333] hover:border-blue-500/30 transition-colors"
               >
-                <span className="text-blue-400">▸</span>
                 <span className="text-gray-300 text-sm">{skill}</span>
               </div>
             ))}
@@ -317,7 +306,7 @@ export default function ExperiencePage() {
                 : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
             }`}
           >
-            📌 All Experience
+            All Experience
           </button>
           <button
             onClick={() => setFilter('self-employed')}
@@ -327,7 +316,7 @@ export default function ExperiencePage() {
                 : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
             }`}
           >
-            🚀 Self-Employed
+            Self-Employed
           </button>
           <button
             onClick={() => setFilter('contract')}
@@ -337,7 +326,7 @@ export default function ExperiencePage() {
                 : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
             }`}
           >
-            📋 Contract
+            Contract
           </button>
           <button
             onClick={() => setFilter('full-time')}
@@ -347,7 +336,7 @@ export default function ExperiencePage() {
                 : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
             }`}
           >
-            💼 Full-Time
+            Full-Time
           </button>
         </div>
 
@@ -366,26 +355,24 @@ export default function ExperiencePage() {
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-2 flex-wrap">
-                      <span className="text-xl">✈️</span>
                       <h2 className="text-xl font-semibold text-white">
                         {exp.role}
                       </h2>
                       <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getTypeColor(exp.type)}`}>
-                        {getTypeEmoji(exp.type)} {getTypeLabel(exp.type)}
+                        {getTypeLabel(exp.type)}
                       </span>
                     </div>
                     
                     <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
-                      <span className="flex items-center gap-1.5">
-                        <span>🏢</span>
+                      <span>
                         {exp.company}
                       </span>
-                      <span className="flex items-center gap-1.5">
-                        <span>📅</span>
+                      <span className="text-gray-600">•</span>
+                      <span>
                         {exp.period}
                       </span>
-                      <span className="flex items-center gap-1.5">
-                        <span>📍</span>
+                      <span className="text-gray-600">•</span>
+                      <span>
                         {exp.location}
                       </span>
                     </div>
@@ -399,9 +386,9 @@ export default function ExperiencePage() {
                     }}
                   >
                     {expandedId === exp.id ? (
-                      <span>▲</span>
+                      <span className="text-sm">−</span>
                     ) : (
-                      <span>▼</span>
+                      <span className="text-sm">+</span>
                     )}
                   </button>
                 </div>
@@ -417,7 +404,7 @@ export default function ExperiencePage() {
                     </span>
                   ))}
                   {exp.technologies.length > 6 && (
-                    <span className="px-2.5 py-1 text-gray-500 text-xs flex items-center">
+                    <span className="px-2.5 py-1 text-gray-500 text-xs">
                       +{exp.technologies.length - 6} more
                     </span>
                   )}
@@ -429,8 +416,7 @@ export default function ExperiencePage() {
                 <div className="px-6 pb-6 pt-4 border-t border-[#2a2a2a]">
                   {/* Description */}
                   <div className="mb-4">
-                    <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
-                      <span>📋</span>
+                    <h3 className="text-sm font-medium text-gray-400 mb-2">
                       Key Responsibilities
                     </h3>
                     <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
@@ -443,8 +429,7 @@ export default function ExperiencePage() {
                   {/* Highlights / Achievements */}
                   {exp.highlights && exp.highlights.length > 0 && (
                     <div className="mb-4">
-                      <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
-                        <span>⭐</span>
+                      <h3 className="text-sm font-medium text-gray-400 mb-2">
                         Key Highlights
                       </h3>
                       <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
@@ -458,8 +443,7 @@ export default function ExperiencePage() {
                   {/* Detailed Achievements */}
                   {exp.detailedAchievements && exp.detailedAchievements.length > 0 && (
                     <div className="mb-4">
-                      <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
-                        <span>🏆</span>
+                      <h3 className="text-sm font-medium text-gray-400 mb-2">
                         Detailed Achievements
                       </h3>
                       <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
@@ -481,10 +465,9 @@ export default function ExperiencePage() {
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-1.5 px-3 py-1.5 bg-[#2a2a2a] text-blue-400 rounded-lg text-sm hover:bg-[#333] transition-colors"
+                            className="px-3 py-1.5 bg-[#2a2a2a] text-blue-400 rounded-lg text-sm hover:bg-[#333] transition-colors"
                           >
                             {project.name}
-                            <span>↗</span>
                           </a>
                         ))}
                       </div>
@@ -513,8 +496,7 @@ export default function ExperiencePage() {
 
         {/* Technical Skills Section */}
         <div className="mt-16 bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
-          <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-blue-400">💻</span>
+          <h2 className="text-lg font-semibold text-white mb-6 tracking-tight">
             Technical Skills
           </h2>
           
@@ -589,8 +571,7 @@ export default function ExperiencePage() {
 
         {/* Education Section */}
         <div className="mt-8 bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
-          <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="text-blue-400">🎓</span>
+          <h2 className="text-lg font-semibold text-white mb-4 tracking-tight">
             Education
           </h2>
           <div className="space-y-4">
