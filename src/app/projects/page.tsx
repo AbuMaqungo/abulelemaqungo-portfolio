@@ -19,7 +19,7 @@ export default function Projects() {
       ],
       link: "https://shelfforce.co.za",
       live: true,
-      buttonText: "Visit ShelfForce →", // Added this
+      buttonText: "Visit ShelfForce", // Added this
     },
     {
       title: "SIAKA School Uniforms",
@@ -40,7 +40,7 @@ export default function Projects() {
       ],
       link: "https://siaka.co.za",
       live: true,
-      buttonText: "Visit SIAKA →", // Added this
+      buttonText: "Visit SIAKA", // Added this
     },
     {
       title: "iQula Lakwa Ntu",
@@ -61,7 +61,7 @@ export default function Projects() {
       ],
       link: "https://iqulalakwantu.co.za",
       live: true,
-      buttonText: "Visit iQula →", // Added this
+      buttonText: "Visit iQula", // Added this
     },
   ];
 
