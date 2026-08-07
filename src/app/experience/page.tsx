@@ -1,132 +1,641 @@
-export default function Experience() {
-  const experiences = [
-    {
-      company: "Department of Home Affairs",
-      position: "Application Developer",
-      duration: "January 2023 – Current",
-      location: "Pretoria, South Africa",
-      description: "Full-stack development using modern technologies in an agile environment.",
-      achievements: [
-        "Developed eRecruitment web application using ASP.NET Core MVC and Blazor",
-        "Created applications handling biometric data (fingerprints, signatures, photos)",
-        "Worked with React, Angular, Java, C#, and various databases",
-        "Participated in agile Scrum methodology with daily standups and sprint planning",
-        "Designed database tables, stored procedures, and optimized queries"
-      ],
-      technologies: ["React", "Angular", "Java", "C#", "ASP.NET Core", "Blazor", "SQL Server", "RESTful APIs"]
-    },
-    {
-      company: "Department of Home Affairs", 
-      position: "Application Support and Database Administrator",
-      duration: "November 2022 – December 2022",
-      location: "Pretoria, South Africa",
-      description: "Application maintenance, support, and database administration.",
-      achievements: [
-        "Installed, updated, and patched applications across multiple branches",
-        "Responded to and resolved application-related issues through helpdesk system",
-        "Monitored application performance and availability",
-        "Performed database troubleshooting and maintenance",
-        "Implemented database replication and resolved stuck applications"
-      ],
-      technologies: ["SQL Server", "Windows Server", "Helpdesk Systems", "Database Replication"]
-    },
-    {
-      company: "University of Fort Hare",
-      position: "Application Developer and Support (Volunteer)",
-      duration: "January 2020 – November 2022", 
-      location: "Eastern Cape, South Africa",
-      description: "Developed and maintained custom internal systems for university operations.",
-      achievements: [
-        "Built Student Registration, Exam Results, and Leave Application systems",
-        "Developed Lecturer Portal and other internal management systems",
-        "Created RESTful APIs for integration with third-party platforms",
-        "Implemented user authentication and role-based authorization",
-        "Built dynamic report generators with export functionality"
-      ],
-      technologies: ["Java", "Spring Boot", "React", "MySQL", "PostgreSQL", "RESTful APIs"]
-    },
-    {
-      company: "SAFAIR, Jetworx, Executive Avionic Solutions, Aero Electrical",
-      position: "Aircraft Avionician",
-      duration: "January 2011 - December 2013",
-      location: "Gauteng, South Africa",
-      description: "Aircraft instrumentation, navigation systems, and electrical systems maintenance.",
-      achievements: [
-        "Maintained aircraft instruments and navigation systems",
-        "Performed defect rectifications using wiring and schematic diagrams",
-        "Worked on various aircraft including MD80, Boeing 727, B737 series",
-        "Carried out A, B, C, and D-checks and pre-flight inspections",
-        "Troubleshooting and defect resolution at maintenance and flight line levels"
-      ],
-      technologies: ["Aircraft Instruments", "Aircraft Systems & Navigation", "Avionics", "Electrical Systems", "Maintenance Documentation"]
+'use client'
+
+import { useState } from 'react'
+import { 
+  Briefcase, 
+  Calendar, 
+  MapPin, 
+  Award,
+  ChevronDown,
+  ChevronUp,
+  ExternalLink,
+  Users,
+  Code,
+  Database,
+  Cloud,
+  Shield,
+  Server,
+  GitBranch,
+  Brain,
+  Plane,
+  Wrench,
+  GraduationCap,
+  Terminal,
+  Layers
+} from 'lucide-react'
+
+// Experience data
+const experiences = [
+  {
+    id: 1,
+    company: 'Self-Employed',
+    role: 'Application Developer',
+    period: '01 April 2026 – Current',
+    location: 'Cape Town, South Africa',
+    type: 'self-employed',
+    description: [
+      'Application Support & End-User Training',
+      'Building full-stack web applications for clients across multiple industries',
+      'Managing end-to-end project delivery from requirements gathering to deployment'
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'PostgreSQL', 'Docker', 'ASP.NET Core', 'FastAPI', 'Python', 'C#'],
+    highlights: [
+      'ShelfForce Retail Solutions — Built responsive corporate website with Next.js 16, SSR, and Framer Motion animations',
+      'SIAKA School Uniforms — Developed full-stack e-commerce platform with ASP.NET Core API and Azure SQL',
+      'iQula Lakwa Ntu — Built enterprise platform using FastAPI, React/Vite, and PostgreSQL'
+    ],
+    projects: [
+      { name: 'ShelfForce', url: 'https://shelfforce.co.za' },
+      { name: 'SIAKA', url: 'https://siaka.co.za' },
+      { name: 'iQula Lakwa Ntu', url: 'https://iqulalakwantu.co.za' }
+    ],
+    detailedAchievements: [
+      'Built ShelfForce corporate website using Next.js 16 with SSR, per-page metadata, Open Graph/Twitter cards, auto-generated sitemap.xml and robots.txt',
+      'Configured full production infrastructure: Truehost (domain), Cloudflare (DNS), Vercel (hosting/HTTPS) and Zoho Mail with MX, SPF and DKIM authentication',
+      'Established GitHub → Vercel CI/CD pipeline with sub-two-minute deployments and instant rollback',
+      'Integrated EmailJS contact delivery, WhatsApp Business chat and downloadable QR code feature',
+      'Architected SIAKA e-commerce with Azure SQL Database covering Products, Orders and OrderItems',
+      'Implemented admin authentication with BCrypt password hashing, role-based access control and activity logging',
+      'Integrated Cloudinary for product image upload, storage and delivery'
+    ]
+  },
+  {
+    id: 2,
+    company: 'Department of Home Affairs',
+    role: 'System Testing Specialist',
+    period: '15 December 2025 – 31 March 2026',
+    location: 'Pretoria, South Africa',
+    type: 'contract',
+    description: [
+      'API Testing & Validation using Postman across all development streams',
+      'Regression Testing for DHA Live Capture (Front Office & Back Office)',
+      'Regression Testing for Electronic Travel Authorisation (ETA) & Reinstatement of Citizenship (ROC)',
+      'Version Control & Collaboration using GitLab',
+      'System and integration testing for applications'
+    ],
+    technologies: ['Postman', 'GitLab', 'JIRA', 'CI/CD', 'API Testing', 'Regression Testing', 'JWT', 'Docker', 'Python'],
+    highlights: [
+      'Reduced integration defects reaching UAT through comprehensive API testing',
+      'Developed and maintained regression test scripts aligned to business-critical processes',
+      'Automated testing workflows across development, staging, and production environments'
+    ],
+    detailedAchievements: [
+      'Designed and executed comprehensive API test suites covering functional correctness, authentication flows, error handling, and edge-case scenarios',
+      'Created reusable Postman collections with environment variables for consistent testing across environments',
+      'Planned and executed structured regression testing for Live Capture system across front office and back office workflows',
+      'Logged defects with detailed reproduction steps in JIRA and collaborated with development teams',
+      'Managed feature branches, merge requests, and code reviews using GitLab',
+      'Leveraged GitLab CI/CD pipelines to automate build, test, and deployment workflows'
+    ]
+  },
+  {
+    id: 3,
+    company: 'Department of Home Affairs',
+    role: 'System Support & Database Administrator',
+    period: '01 September 2023 – 12 December 2025',
+    location: 'Pretoria, South Africa',
+    type: 'full-time',
+    description: [
+      'Installing new applications, updating and patching existing applications',
+      'Application support and sustenance for production environments across multiple business areas',
+      'Supporting design and maintenance of enterprise applications serving over 400 branches nationwide',
+      'Technical support and training to end users',
+      'SQL Server database administration across central and branch locations',
+      'Developing automation scripts using T-SQL and Python'
+    ],
+    technologies: ['SQL Server', 'T-SQL', 'Python', 'Remote Desktop', 'Visual Studio 2022', 'Service Manager', 'Azure SQL', 'Microsoft SQL Server Studio'],
+    highlights: [
+      'Supported passport and ID processing systems for 400+ branches nationwide',
+      'Implemented replication and ensured data consistency across distributed database architecture',
+      'Created automation scripts reducing manual maintenance time significantly'
+    ],
+    detailedAchievements: [
+      'Troubleshot and debugged complex system issues affecting passport and ID processing systems',
+      'Executed diagnostic SQL queries to resolve stuck applications and data integrity issues',
+      'Implemented corrective stored procedures across distributed database architecture',
+      'Collaborated with Database Systems Engineers and IT infrastructure teams on backup procedures and security protocols',
+      'Provided technical support and created documentation for non-technical stakeholders'
+    ]
+  },
+  {
+    id: 4,
+    company: 'Department of Home Affairs',
+    role: 'IT Technical Support: Desktop & Network',
+    period: '24 November 2022 – 31 August 2023',
+    location: 'Pretoria, South Africa',
+    type: 'full-time',
+    description: [
+      'Video conference configuration and troubleshooting using CISCO Unified CM Administration',
+      'First and second line support using BCM Remedy IT Service',
+      'Creating new network systems using GNS3 and subnetting',
+      'Joining new servers and computers to DHA domain',
+      'Configuring switches, routers, and network systems using PuTTY',
+      'Monitoring network systems using SCOM and Manage Engine'
+    ],
+    technologies: ['Cisco Unified CM', 'GNS3', 'PuTTY', 'SCOM', 'Manage Engine', 'Active Directory', 'GroupWise', 'Outlook'],
+    highlights: [
+      'Migrated 500+ users from GroupWise to Outlook',
+      'Configured switches, routers, and network systems across department branches'
+    ],
+    detailedAchievements: [
+      'Managed users: allocation of new users, updating existing users, resetting passwords and archiving users',
+      'Monitored all network systems ensuring proactive detection of incidents',
+      'Supported roll-out and configuration of ICT infrastructure',
+      'Troubleshot switch speed and network performance issues using PuTTY'
+    ]
+  },
+  {
+    id: 5,
+    company: 'Aero Electrical',
+    role: 'Aircraft Avionician',
+    period: '14 October 2013 – 05 December 2013',
+    location: 'Wonderboom National Airport, South Africa',
+    type: 'contract',
+    description: [
+      'Validated ULB/Black Box functionality per SARP requirements for accident data preservation compliance',
+      'Fault-finding on aircraft wiring looms and avionics bus connections utilizing AWM and CAA-approved procedures',
+      'Tested and configured VHF/UHF radio navigation systems including VOR, DME, and ADF',
+      'Performed Landing Gear and Anti-Skid System functional testing'
+    ],
+    technologies: ['RF Communications', 'VOR', 'DME', 'ADF', 'Aircraft Wiring Manuals', 'CAA Procedures', 'Signal Testing'],
+    highlights: [
+      'Developed practical knowledge of RF communications protocols and frequency management',
+      'Validated sensor feedback loops — translatable to industrial control systems and embedded IoT device testing'
+    ],
+    icon: Plane
+  },
+  {
+    id: 6,
+    company: 'Executive Avionic Solution',
+    role: 'Aircraft Avionician',
+    period: '04 February 2013 – 11 October 2013',
+    location: 'Lanseria International Airport, South Africa',
+    type: 'contract',
+    description: [
+      'Tested and validated Underwater Locator Beacon (ULB) and Flight Data Recorder (Black Box)',
+      'Validated ULB/Black Box functionality per SARP requirements for accident data preservation compliance',
+      'Performed Landing Gear and Anti-Skid System functional testing',
+      'Performed complete functional testing of cockpit instrument systems'
+    ],
+    technologies: ['ULB', 'Flight Data Recorder', 'HSI', 'AI', 'ELT', 'Gyro Units', 'Diagnostic Tools'],
+    highlights: [
+      'Critical data recording and telemetry systems analogous to enterprise data logging and IT audit trail systems',
+      'Equivalent to IT systems baseline acceptance testing and hardware commissioning'
+    ],
+    icon: Plane
+  },
+  {
+    id: 7,
+    company: 'SAfair, Jetworx',
+    role: 'Aircraft Avionician',
+    period: '24 October 2011 – 01 February 2013',
+    location: 'OR Tambo International Airport, South Africa',
+    type: 'full-time',
+    description: [
+      'Executed Pitot-Static system pressure tests using digital manometers and computerized test equipment',
+      'Systematic fault diagnosis on aircraft electrical wiring networks using technical schematics',
+      'Administered, tested, and verified Instrument Landing System (ILS) endpoints and data integrity',
+      'Tested and configured VHF/UHF radio navigation systems including VOR, DME, and ADF',
+      'Performed Landing Gear and Anti-Skid System functional testing',
+      'Conducted ILS signal integrity tests and cockpit instrumentation checks'
+    ],
+    technologies: ['Pitot-Static Systems', 'Digital Manometers', 'ILS', 'VOR', 'DME', 'ADF', 'RF Communications', 'ICAO Doc 8168'],
+    highlights: [
+      'Structured troubleshooting methodologies consistent with ICT systems fault isolation',
+      'Signal processing verification and localizer/glideslope system testing — relatable to network infrastructure testing',
+      'RF signal validation and communications systems commissioning'
+    ],
+    icon: Plane
+  },
+  {
+    id: 8,
+    company: 'Denel Technical Academy',
+    role: 'Aircraft Avionician — Trade Foundation Programme',
+    period: '24 January 2011 – 14 October 2011',
+    location: 'OR Tambo International Airport, South Africa',
+    type: 'contract',
+    description: [
+      'Studied Mechanics of Flight and Trade Theory in accordance with Manpower Training Act 1981',
+      'Completed structured training in Basic Electronics and Basic Digital Techniques',
+      'Trained in Syncro & Servos systems — electromechanical feedback control loops',
+      'Applied Basic Electricity principles (Ohm\'s Law, circuit analysis, AC/DC theory)',
+      'Completed Soldering & Desoldering training to professional trade standard'
+    ],
+    technologies: ['Basic Electronics', 'Digital Techniques', 'Syncro & Servos', 'Ohm\'s Law', 'Circuit Analysis', 'Soldering', 'PCB Assembly'],
+    highlights: [
+      'Certificate No. 10/11/007 issued by Denel Technical Academy',
+      'Foundation for hardware repair, server component handling, and electronics-level IT maintenance',
+      'Logic gates, digital circuits, binary arithmetic — foundational to embedded systems and hardware diagnostics'
+    ],
+    icon: GraduationCap
+  }
+]
+
+// Core Competencies with Icons
+const coreCompetencies = [
+  { name: 'Full-Stack Web Development (React, Next.js)', icon: Code, color: 'text-blue-400' },
+  { name: 'REST API Design & Development', icon: Server, color: 'text-green-400' },
+  { name: 'API Testing & Validation (Postman)', icon: Brain, color: 'text-purple-400' },
+  { name: 'Regression & System Testing', icon: Shield, color: 'text-red-400' },
+  { name: 'SQL Server, PostgreSQL & Azure SQL Administration', icon: Database, color: 'text-orange-400' },
+  { name: 'SQL Programming & Query Optimization', icon: Terminal, color: 'text-yellow-400' },
+  { name: 'Cloud Infrastructure & DNS Configuration', icon: Cloud, color: 'text-cyan-400' },
+  { name: 'Version Control (GitLab, GitHub)', icon: GitBranch, color: 'text-pink-400' },
+  { name: 'Docker & CI/CD Pipelines', icon: Layers, color: 'text-indigo-400' }
+]
+
+// Technical Skills
+const technicalSkills = {
+  languages: ['Python', 'C#', 'JavaScript', 'Java', 'TypeScript', 'HTML5', 'CSS3', 'SQL'],
+  frameworks: ['FastAPI', 'ASP.NET Core (.NET 8)', 'React', 'Next.js 16 (App Router)', 'Tailwind CSS v4', 'Framer Motion', 'SQLAlchemy', 'Entity Framework Core'],
+  databases: ['PostgreSQL (Neon)', 'Azure SQL Database', 'Microsoft SQL Server'],
+  devops: ['Docker', 'CI/CD (GitHub → Vercel / Render)', 'Cloudflare DNS', 'Vercel', 'Render', 'Azure App Service'],
+  cloud: ['Cloudinary', 'Neon (serverless PostgreSQL)', 'Azure SQL (serverless)'],
+  tools: ['VS Code', 'PyCharm', 'Visual Studio 2022', 'Git', 'GitHub', 'npm']
+}
+
+export default function ExperiencePage() {
+  const [expandedId, setExpandedId] = useState<number | null>(null)
+  const [filter, setFilter] = useState<string>('all')
+
+  const toggleExpand = (id: number) => {
+    setExpandedId(expandedId === id ? null : id)
+  }
+
+  const filteredExperiences = filter === 'all' 
+    ? experiences 
+    : experiences.filter(exp => exp.type === filter)
+
+  const getTypeColor = (type: string) => {
+    switch(type) {
+      case 'self-employed': return 'bg-purple-500/10 text-purple-400 border-purple-500/20'
+      case 'contract': return 'bg-orange-500/10 text-orange-400 border-orange-500/20'
+      case 'full-time': return 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+      default: return 'bg-gray-500/10 text-gray-400 border-gray-500/20'
     }
-  ];
+  }
+
+  const getTypeLabel = (type: string) => {
+    switch(type) {
+      case 'self-employed': return 'Self-Employed'
+      case 'contract': return 'Contract'
+      case 'full-time': return 'Full-Time'
+      default: return type
+    }
+  }
 
   return (
-    <div className="container py-12">
-      <h1 className="text-4xl font-bold text-white mb-8">Work Experience</h1>
-      <p className="text-slate-300 text-lg mb-12">
-        My professional journey through various roles in software development and aviation technology.
-      </p>
+    <main className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f] py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Professional Experience
+          </h1>
+          <p className="text-gray-400 text-lg max-w-4xl leading-relaxed">
+            Results-driven Application Developer with hands-on experience delivering enterprise-grade 
+            software solutions within high-impact environments. Demonstrates deep technical proficiency 
+            across the full software development life cycle — from requirements elicitation and systems 
+            analysis through architecture design, development, testing, deployment, and production support. 
+            Specializes in SQL programming and database performance optimization across Microsoft SQL Server 2019, 
+            PostgreSQL, and MySQL, with a proven track record of designing scalable relational schemas, eliminating 
+            query bottlenecks, and maintaining data integrity in distributed environments. Complemented by hands-on 
+            experience in API testing (Postman), regression testing, and CI/CD deployment pipelines. BSc Honours 
+            in Computer Science with a strong foundation in data modelling and systems analysis.
+          </p>
+        </div>
 
-      <div className="space-y-12">
-        {experiences.map((experience, index) => (
-          <div key={index} className="bg-slate-800 rounded-lg p-8 border border-slate-700 relative">
-            {/* Timeline connector */}
-            {index !== experiences.length - 1 && (
-              <div className="absolute left-8 top-full w-1 h-8 bg-blue-500 ml-4"></div>
-            )}
-            
-            <div className="flex flex-col md:flex-row md:items-start gap-6">
-              {/* Timeline dot */}
-              <div className="flex-shrink-0">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
+        {/* Core Competencies */}
+        <div className="mb-12 bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
+          <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+            <Award className="w-5 h-5 text-blue-400" />
+            Core Competencies
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {coreCompetencies.map((skill, index) => {
+              const Icon = skill.icon
+              return (
+                <div 
+                  key={index}
+                  className="flex items-center gap-2 bg-[#2a2a2a] px-3 py-2 rounded-lg border border-[#333] hover:border-blue-500/30 transition-colors"
+                >
+                  <Icon className={`w-4 h-4 ${skill.color}`} />
+                  <span className="text-gray-300 text-sm">{skill.name}</span>
                 </div>
-              </div>
+              )
+            })}
+          </div>
+        </div>
 
-              {/* Content */}
-              <div className="flex-1">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div>
-                    <h3 className="text-2xl font-semibold text-white">{experience.position}</h3>
-                    <p className="text-blue-400 font-medium text-lg">{experience.company}</p>
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap gap-3 mb-8">
+          <button
+            onClick={() => setFilter('all')}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              filter === 'all' 
+                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' 
+                : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
+            }`}
+          >
+            All Experience
+          </button>
+          <button
+            onClick={() => setFilter('self-employed')}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              filter === 'self-employed' 
+                ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/25' 
+                : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
+            }`}
+          >
+            Self-Employed
+          </button>
+          <button
+            onClick={() => setFilter('contract')}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              filter === 'contract' 
+                ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25' 
+                : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
+            }`}
+          >
+            Contract
+          </button>
+          <button
+            onClick={() => setFilter('full-time')}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              filter === 'full-time' 
+                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' 
+                : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
+            }`}
+          >
+            Full-Time
+          </button>
+        </div>
+
+        {/* Experience Cards */}
+        <div className="space-y-6">
+          {filteredExperiences.map((exp) => {
+            const Icon = exp.icon || Briefcase
+            return (
+              <div 
+                key={exp.id}
+                className="group bg-[#1a1a1a] rounded-xl border border-[#2a2a2a] hover:border-blue-500/30 transition-all duration-300 overflow-hidden"
+              >
+                {/* Header - Always visible */}
+                <div 
+                  className="p-6 cursor-pointer"
+                  onClick={() => toggleExpand(exp.id)}
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-3 mb-2 flex-wrap">
+                        <Icon className="w-5 h-5 text-blue-400" />
+                        <h2 className="text-xl font-semibold text-white">
+                          {exp.role}
+                        </h2>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getTypeColor(exp.type)}`}>
+                          {getTypeLabel(exp.type)}
+                        </span>
+                      </div>
+                      
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+                        <span className="flex items-center gap-1.5">
+                          <Briefcase className="w-4 h-4" />
+                          {exp.company}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <Calendar className="w-4 h-4" />
+                          {exp.period}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <MapPin className="w-4 h-4" />
+                          {exp.location}
+                        </span>
+                      </div>
+                    </div>
+
+                    <button 
+                      className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-[#2a2a2a] rounded-lg"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        toggleExpand(exp.id)
+                      }}
+                    >
+                      {expandedId === exp.id ? (
+                        <ChevronUp className="w-5 h-5" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5" />
+                      )}
+                    </button>
                   </div>
-                  <div className="text-slate-400 text-sm md:text-right mt-2 md:mt-0">
-                    <p>{experience.duration}</p>
-                    <p>{experience.location}</p>
-                  </div>
-                </div>
 
-                <p className="text-slate-300 mb-4">{experience.description}</p>
-
-                <div className="mb-6">
-                  <h4 className="text-white font-semibold mb-3">Key Achievements:</h4>
-                  <ul className="space-y-2">
-                    {experience.achievements.map((achievement, achievementIndex) => (
-                      <li key={achievementIndex} className="text-slate-300 flex items-start">
-                        <span className="text-blue-400 mr-2">•</span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-white font-semibold mb-3">Technologies Used:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {experience.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">
+                  {/* Technologies - Always visible */}
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {exp.technologies.slice(0, 6).map((tech) => (
+                      <span 
+                        key={tech}
+                        className="px-2.5 py-1 bg-[#2a2a2a] text-gray-400 rounded-md text-xs border border-[#333] hover:border-blue-500/30 transition-colors"
+                      >
                         {tech}
                       </span>
                     ))}
+                    {exp.technologies.length > 6 && (
+                      <span className="px-2.5 py-1 text-gray-500 text-xs flex items-center">
+                        +{exp.technologies.length - 6} more
+                      </span>
+                    )}
                   </div>
                 </div>
+
+                {/* Expanded Content */}
+                {expandedId === exp.id && (
+                  <div className="px-6 pb-6 pt-4 border-t border-[#2a2a2a] animate-in slide-in-from-top-2 duration-200">
+                    {/* Description */}
+                    <div className="mb-4">
+                      <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
+                        <Briefcase className="w-4 h-4" />
+                        Key Responsibilities
+                      </h3>
+                      <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
+                        {exp.description.map((item, idx) => (
+                          <li key={idx} className="leading-relaxed">{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Highlights / Achievements */}
+                    {exp.highlights && exp.highlights.length > 0 && (
+                      <div className="mb-4">
+                        <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
+                          <Award className="w-4 h-4 text-yellow-400" />
+                          Key Highlights
+                        </h3>
+                        <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
+                          {exp.highlights.map((highlight, idx) => (
+                            <li key={idx} className="leading-relaxed">{highlight}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Detailed Achievements */}
+                    {exp.detailedAchievements && exp.detailedAchievements.length > 0 && (
+                      <div className="mb-4">
+                        <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
+                          <Award className="w-4 h-4 text-blue-400" />
+                          Detailed Achievements
+                        </h3>
+                        <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
+                          {exp.detailedAchievements.map((achievement, idx) => (
+                            <li key={idx} className="leading-relaxed">{achievement}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Projects (for self-employed) */}
+                    {exp.projects && (
+                      <div className="mb-4">
+                        <h3 className="text-sm font-medium text-gray-400 mb-2">Projects</h3>
+                        <div className="flex flex-wrap gap-3">
+                          {exp.projects.map((project) => (
+                            <a
+                              key={project.name}
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#2a2a2a] text-blue-400 rounded-lg text-sm hover:bg-[#333] transition-colors"
+                            >
+                              {project.name}
+                              <ExternalLink className="w-3.5 h-3.5" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* All Technologies */}
+                    <div className="pt-4 border-t border-[#2a2a2a]">
+                      <h3 className="text-sm font-medium text-gray-400 mb-2">Technologies Used</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech) => (
+                          <span 
+                            key={tech}
+                            className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs border border-blue-500/20 hover:bg-blue-500/20 transition-colors"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Technical Skills Section */}
+        <div className="mt-16 bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
+          <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+            <Code className="w-5 h-5 text-blue-400" />
+            Technical Skills
+          </h2>
+          
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-sm font-medium text-gray-400 mb-2">Languages</h3>
+              <div className="flex flex-wrap gap-2">
+                {technicalSkills.languages.map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-[#2a2a2a] text-gray-300 rounded-full text-xs border border-[#333]">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-medium text-gray-400 mb-2">Frameworks & Libraries</h3>
+              <div className="flex flex-wrap gap-2">
+                {technicalSkills.frameworks.map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-[#2a2a2a] text-gray-300 rounded-full text-xs border border-[#333]">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-medium text-gray-400 mb-2">Databases</h3>
+              <div className="flex flex-wrap gap-2">
+                {technicalSkills.databases.map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-[#2a2a2a] text-gray-300 rounded-full text-xs border border-[#333]">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-medium text-gray-400 mb-2">DevOps & Infrastructure</h3>
+              <div className="flex flex-wrap gap-2">
+                {technicalSkills.devops.map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-[#2a2a2a] text-gray-300 rounded-full text-xs border border-[#333]">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-medium text-gray-400 mb-2">Cloud & Media</h3>
+              <div className="flex flex-wrap gap-2">
+                {technicalSkills.cloud.map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-[#2a2a2a] text-gray-300 rounded-full text-xs border border-[#333]">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-medium text-gray-400 mb-2">IDEs & Tools</h3>
+              <div className="flex flex-wrap gap-2">
+                {technicalSkills.tools.map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-[#2a2a2a] text-gray-300 rounded-full text-xs border border-[#333]">
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* Education Section */}
+        <div className="mt-8 bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
+          <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+            <GraduationCap className="w-5 h-5 text-blue-400" />
+            Education
+          </h2>
+          <div className="space-y-4">
+            <div className="border-l-2 border-blue-500/30 pl-4">
+              <h3 className="text-white font-medium">
+                Bachelor of Science (Honours) in Computer Science
+              </h3>
+              <p className="text-gray-400 text-sm">University of Fort Hare | 2021</p>
+            </div>
+            <div className="border-l-2 border-blue-500/30 pl-4">
+              <h3 className="text-white font-medium">
+                Bachelor of Science in Computer Science, GIS & Remote Sensing
+              </h3>
+              <p className="text-gray-400 text-sm">University of Fort Hare | 2020</p>
+            </div>
+            <div className="border-l-2 border-blue-500/30 pl-4">
+              <h3 className="text-white font-medium">Grade 12 / Matric</h3>
+              <p className="text-gray-400 text-sm">Msobomvu Senior Secondary School | 2015</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    </main>
+  )
 }
