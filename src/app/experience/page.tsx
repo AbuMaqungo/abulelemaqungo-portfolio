@@ -259,18 +259,15 @@ export default function ExperiencePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f] py-12 relative overflow-hidden">
-      {/* Glow effect matching Projects page */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-transparent pointer-events-none" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="min-h-screen bg-slate-900 py-20">
+      <div className="container mx-auto px-4">
         
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Professional Experience
           </h1>
-          <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
+          <p className="text-slate-300 text-lg max-w-4xl leading-relaxed">
             Results-driven Application Developer with hands-on experience delivering enterprise-grade 
             software solutions within high-impact environments. Demonstrates deep technical proficiency 
             across the full software development life cycle — from requirements elicitation and systems 
@@ -290,9 +287,9 @@ export default function ExperiencePage() {
             {coreCompetencies.map((skill, index) => (
               <div 
                 key={index}
-                className="bg-[#1a1a1a] px-4 py-2.5 rounded-lg border border-[#2a2a2a] hover:border-blue-500/30 transition-colors"
+                className="bg-slate-800 px-4 py-2.5 rounded-lg border border-slate-700 hover:border-indigo-500/50 transition-colors"
               >
-                <span className="text-gray-300 text-sm">{skill}</span>
+                <span className="text-slate-300 text-sm">{skill}</span>
               </div>
             ))}
           </div>
@@ -304,8 +301,8 @@ export default function ExperiencePage() {
             onClick={() => setFilter('all')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               filter === 'all' 
-                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' 
-                : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
+                ? 'bg-indigo-600 text-white' 
+                : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-indigo-500/50'
             }`}
           >
             All Experience
@@ -314,8 +311,8 @@ export default function ExperiencePage() {
             onClick={() => setFilter('self-employed')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               filter === 'self-employed' 
-                ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/25' 
-                : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
+                ? 'bg-purple-600 text-white' 
+                : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-purple-500/50'
             }`}
           >
             Self-Employed
@@ -324,8 +321,8 @@ export default function ExperiencePage() {
             onClick={() => setFilter('contract')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               filter === 'contract' 
-                ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25' 
-                : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
+                ? 'bg-orange-600 text-white' 
+                : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-orange-500/50'
             }`}
           >
             Contract
@@ -334,8 +331,8 @@ export default function ExperiencePage() {
             onClick={() => setFilter('full-time')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               filter === 'full-time' 
-                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' 
-                : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
+                ? 'bg-blue-600 text-white' 
+                : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-blue-500/50'
             }`}
           >
             Full-Time
@@ -347,7 +344,7 @@ export default function ExperiencePage() {
           {filteredExperiences.map((exp) => (
             <div 
               key={exp.id}
-              className="group bg-[#1a1a1a] rounded-xl border border-[#2a2a2a] hover:border-blue-500/30 transition-all duration-300 overflow-hidden"
+              className="bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/30 transition-all duration-300 overflow-hidden"
             >
               {/* Header - Always visible */}
               <div 
@@ -365,17 +362,17 @@ export default function ExperiencePage() {
                       </span>
                     </div>
                     
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-400">
                       <span>{exp.company}</span>
-                      <span className="text-gray-600">•</span>
+                      <span className="text-slate-600">•</span>
                       <span>{exp.period}</span>
-                      <span className="text-gray-600">•</span>
+                      <span className="text-slate-600">•</span>
                       <span>{exp.location}</span>
                     </div>
                   </div>
 
                   <button 
-                    className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-[#2a2a2a] rounded-lg"
+                    className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-700 rounded-lg"
                     onClick={(e) => {
                       e.stopPropagation()
                       toggleExpand(exp.id)
@@ -394,13 +391,13 @@ export default function ExperiencePage() {
                   {exp.technologies.slice(0, 6).map((tech) => (
                     <span 
                       key={tech}
-                      className="px-2.5 py-1 bg-[#2a2a2a] text-gray-400 rounded-md text-xs border border-[#333] hover:border-blue-500/30 transition-colors"
+                      className="px-2.5 py-1 bg-slate-700 text-slate-300 rounded-md text-xs border border-slate-600 hover:border-indigo-500/30 transition-colors"
                     >
                       {tech}
                     </span>
                   ))}
                   {exp.technologies.length > 6 && (
-                    <span className="px-2.5 py-1 text-gray-500 text-xs">
+                    <span className="px-2.5 py-1 text-slate-500 text-xs">
                       +{exp.technologies.length - 6} more
                     </span>
                   )}
@@ -409,13 +406,13 @@ export default function ExperiencePage() {
 
               {/* Expanded Content */}
               {expandedId === exp.id && (
-                <div className="px-6 pb-6 pt-4 border-t border-[#2a2a2a]">
+                <div className="px-6 pb-6 pt-4 border-t border-slate-700">
                   {/* Description */}
                   <div className="mb-4">
-                    <h3 className="text-sm font-medium text-gray-400 mb-2">
+                    <h3 className="text-sm font-medium text-slate-400 mb-2">
                       Key Responsibilities
                     </h3>
-                    <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
+                    <ul className="list-disc list-inside space-y-1.5 text-slate-300 text-sm">
                       {exp.description.map((item, idx) => (
                         <li key={idx} className="leading-relaxed">{item}</li>
                       ))}
@@ -425,10 +422,10 @@ export default function ExperiencePage() {
                   {/* Highlights / Achievements */}
                   {exp.highlights && exp.highlights.length > 0 && (
                     <div className="mb-4">
-                      <h3 className="text-sm font-medium text-gray-400 mb-2">
+                      <h3 className="text-sm font-medium text-slate-400 mb-2">
                         Key Highlights
                       </h3>
-                      <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
+                      <ul className="list-disc list-inside space-y-1.5 text-slate-300 text-sm">
                         {exp.highlights.map((highlight, idx) => (
                           <li key={idx} className="leading-relaxed">{highlight}</li>
                         ))}
@@ -439,10 +436,10 @@ export default function ExperiencePage() {
                   {/* Detailed Achievements */}
                   {exp.detailedAchievements && exp.detailedAchievements.length > 0 && (
                     <div className="mb-4">
-                      <h3 className="text-sm font-medium text-gray-400 mb-2">
+                      <h3 className="text-sm font-medium text-slate-400 mb-2">
                         Detailed Achievements
                       </h3>
-                      <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
+                      <ul className="list-disc list-inside space-y-1.5 text-slate-300 text-sm">
                         {exp.detailedAchievements.map((achievement, idx) => (
                           <li key={idx} className="leading-relaxed">{achievement}</li>
                         ))}
@@ -453,7 +450,7 @@ export default function ExperiencePage() {
                   {/* Projects (for self-employed) */}
                   {exp.projects && (
                     <div className="mb-4">
-                      <h3 className="text-sm font-medium text-gray-400 mb-2">Projects</h3>
+                      <h3 className="text-sm font-medium text-slate-400 mb-2">Projects</h3>
                       <div className="flex flex-wrap gap-3">
                         {exp.projects.map((project) => (
                           <a
@@ -461,7 +458,7 @@ export default function ExperiencePage() {
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-3 py-1.5 bg-[#2a2a2a] text-blue-400 rounded-lg text-sm hover:bg-[#333] transition-colors"
+                            className="px-3 py-1.5 bg-slate-700 text-indigo-400 rounded-lg text-sm hover:bg-slate-600 transition-colors"
                           >
                             {project.name}
                           </a>
@@ -471,13 +468,13 @@ export default function ExperiencePage() {
                   )}
 
                   {/* All Technologies */}
-                  <div className="pt-4 border-t border-[#2a2a2a]">
-                    <h3 className="text-sm font-medium text-gray-400 mb-2">Technologies Used</h3>
+                  <div className="pt-4 border-t border-slate-700">
+                    <h3 className="text-sm font-medium text-slate-400 mb-2">Technologies Used</h3>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
                         <span 
                           key={tech}
-                          className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs border border-blue-500/20 hover:bg-blue-500/20 transition-colors"
+                          className="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs border border-indigo-500/20 hover:bg-indigo-500/20 transition-colors"
                         >
                           {tech}
                         </span>
@@ -494,12 +491,12 @@ export default function ExperiencePage() {
         <div className="mt-16">
           <h2 className="text-lg font-semibold text-white mb-4">Technical Skills</h2>
           
-          <div className="space-y-4">
+          <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 space-y-4">
             <div>
-              <h3 className="text-sm font-medium text-gray-400 mb-2">Languages</h3>
+              <h3 className="text-sm font-medium text-slate-400 mb-2">Languages</h3>
               <div className="flex flex-wrap gap-2">
                 {technicalSkills.languages.map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[#1a1a1a] text-gray-300 rounded-full text-xs border border-[#2a2a2a]">
+                  <span key={skill} className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs border border-slate-600">
                     {skill}
                   </span>
                 ))}
@@ -507,10 +504,10 @@ export default function ExperiencePage() {
             </div>
             
             <div>
-              <h3 className="text-sm font-medium text-gray-400 mb-2">Frameworks & Libraries</h3>
+              <h3 className="text-sm font-medium text-slate-400 mb-2">Frameworks & Libraries</h3>
               <div className="flex flex-wrap gap-2">
                 {technicalSkills.frameworks.map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[#1a1a1a] text-gray-300 rounded-full text-xs border border-[#2a2a2a]">
+                  <span key={skill} className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs border border-slate-600">
                     {skill}
                   </span>
                 ))}
@@ -518,10 +515,10 @@ export default function ExperiencePage() {
             </div>
             
             <div>
-              <h3 className="text-sm font-medium text-gray-400 mb-2">Databases</h3>
+              <h3 className="text-sm font-medium text-slate-400 mb-2">Databases</h3>
               <div className="flex flex-wrap gap-2">
                 {technicalSkills.databases.map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[#1a1a1a] text-gray-300 rounded-full text-xs border border-[#2a2a2a]">
+                  <span key={skill} className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs border border-slate-600">
                     {skill}
                   </span>
                 ))}
@@ -529,10 +526,10 @@ export default function ExperiencePage() {
             </div>
             
             <div>
-              <h3 className="text-sm font-medium text-gray-400 mb-2">DevOps & Infrastructure</h3>
+              <h3 className="text-sm font-medium text-slate-400 mb-2">DevOps & Infrastructure</h3>
               <div className="flex flex-wrap gap-2">
                 {technicalSkills.devops.map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[#1a1a1a] text-gray-300 rounded-full text-xs border border-[#2a2a2a]">
+                  <span key={skill} className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs border border-slate-600">
                     {skill}
                   </span>
                 ))}
@@ -540,10 +537,10 @@ export default function ExperiencePage() {
             </div>
             
             <div>
-              <h3 className="text-sm font-medium text-gray-400 mb-2">Cloud & Media</h3>
+              <h3 className="text-sm font-medium text-slate-400 mb-2">Cloud & Media</h3>
               <div className="flex flex-wrap gap-2">
                 {technicalSkills.cloud.map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[#1a1a1a] text-gray-300 rounded-full text-xs border border-[#2a2a2a]">
+                  <span key={skill} className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs border border-slate-600">
                     {skill}
                   </span>
                 ))}
@@ -551,10 +548,10 @@ export default function ExperiencePage() {
             </div>
             
             <div>
-              <h3 className="text-sm font-medium text-gray-400 mb-2">IDEs & Tools</h3>
+              <h3 className="text-sm font-medium text-slate-400 mb-2">IDEs & Tools</h3>
               <div className="flex flex-wrap gap-2">
                 {technicalSkills.tools.map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[#1a1a1a] text-gray-300 rounded-full text-xs border border-[#2a2a2a]">
+                  <span key={skill} className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs border border-slate-600">
                     {skill}
                   </span>
                 ))}
@@ -566,28 +563,28 @@ export default function ExperiencePage() {
         {/* Education Section */}
         <div className="mt-8">
           <h2 className="text-lg font-semibold text-white mb-4">Education</h2>
-          <div className="bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
+          <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
             <div className="space-y-4">
-              <div className="border-l-2 border-blue-500/30 pl-4">
+              <div className="border-l-2 border-indigo-500/50 pl-4">
                 <h3 className="text-white font-medium">
                   Bachelor of Science (Honours) in Computer Science
                 </h3>
-                <p className="text-gray-400 text-sm">University of Fort Hare | 2021</p>
+                <p className="text-slate-400 text-sm">University of Fort Hare | 2021</p>
               </div>
-              <div className="border-l-2 border-blue-500/30 pl-4">
+              <div className="border-l-2 border-indigo-500/50 pl-4">
                 <h3 className="text-white font-medium">
                   Bachelor of Science in Computer Science, GIS & Remote Sensing
                 </h3>
-                <p className="text-gray-400 text-sm">University of Fort Hare | 2020</p>
+                <p className="text-slate-400 text-sm">University of Fort Hare | 2020</p>
               </div>
-              <div className="border-l-2 border-blue-500/30 pl-4">
+              <div className="border-l-2 border-indigo-500/50 pl-4">
                 <h3 className="text-white font-medium">Grade 12 / Matric</h3>
-                <p className="text-gray-400 text-sm">Msobomvu Senior Secondary School | 2015</p>
+                <p className="text-slate-400 text-sm">Msobomvu Senior Secondary School | 2015</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
