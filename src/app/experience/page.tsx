@@ -1,28 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { 
-  Briefcase, 
-  Calendar, 
-  MapPin, 
-  Award,
-  ChevronDown,
-  ChevronUp,
-  ExternalLink,
-  Users,
-  Code,
-  Database,
-  Cloud,
-  Shield,
-  Server,
-  GitBranch,
-  Brain,
-  Plane,
-  Wrench,
-  GraduationCap,
-  Terminal,
-  Layers
-} from 'lucide-react'
 
 // Experience data
 const experiences = [
@@ -161,8 +139,7 @@ const experiences = [
     highlights: [
       'Developed practical knowledge of RF communications protocols and frequency management',
       'Validated sensor feedback loops — translatable to industrial control systems and embedded IoT device testing'
-    ],
-    icon: Plane
+    ]
   },
   {
     id: 6,
@@ -181,8 +158,7 @@ const experiences = [
     highlights: [
       'Critical data recording and telemetry systems analogous to enterprise data logging and IT audit trail systems',
       'Equivalent to IT systems baseline acceptance testing and hardware commissioning'
-    ],
-    icon: Plane
+    ]
   },
   {
     id: 7,
@@ -204,8 +180,7 @@ const experiences = [
       'Structured troubleshooting methodologies consistent with ICT systems fault isolation',
       'Signal processing verification and localizer/glideslope system testing — relatable to network infrastructure testing',
       'RF signal validation and communications systems commissioning'
-    ],
-    icon: Plane
+    ]
   },
   {
     id: 8,
@@ -226,22 +201,21 @@ const experiences = [
       'Certificate No. 10/11/007 issued by Denel Technical Academy',
       'Foundation for hardware repair, server component handling, and electronics-level IT maintenance',
       'Logic gates, digital circuits, binary arithmetic — foundational to embedded systems and hardware diagnostics'
-    ],
-    icon: GraduationCap
+    ]
   }
 ]
 
-// Core Competencies with Icons
+// Core Competencies
 const coreCompetencies = [
-  { name: 'Full-Stack Web Development (React, Next.js)', icon: Code, color: 'text-blue-400' },
-  { name: 'REST API Design & Development', icon: Server, color: 'text-green-400' },
-  { name: 'API Testing & Validation (Postman)', icon: Brain, color: 'text-purple-400' },
-  { name: 'Regression & System Testing', icon: Shield, color: 'text-red-400' },
-  { name: 'SQL Server, PostgreSQL & Azure SQL Administration', icon: Database, color: 'text-orange-400' },
-  { name: 'SQL Programming & Query Optimization', icon: Terminal, color: 'text-yellow-400' },
-  { name: 'Cloud Infrastructure & DNS Configuration', icon: Cloud, color: 'text-cyan-400' },
-  { name: 'Version Control (GitLab, GitHub)', icon: GitBranch, color: 'text-pink-400' },
-  { name: 'Docker & CI/CD Pipelines', icon: Layers, color: 'text-indigo-400' }
+  'Full-Stack Web Development (React, Next.js)',
+  'REST API Design & Development',
+  'API Testing & Validation (Postman)',
+  'Regression & System Testing',
+  'SQL Server, PostgreSQL & Azure SQL Administration',
+  'SQL Programming & Query Optimization',
+  'Cloud Infrastructure & DNS Configuration',
+  'Version Control (GitLab, GitHub)',
+  'Docker & CI/CD Pipelines'
 ]
 
 // Technical Skills
@@ -284,6 +258,15 @@ export default function ExperiencePage() {
     }
   }
 
+  const getTypeEmoji = (type: string) => {
+    switch(type) {
+      case 'self-employed': return '🚀'
+      case 'contract': return '📋'
+      case 'full-time': return '💼'
+      default: return '📌'
+    }
+  }
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -308,22 +291,19 @@ export default function ExperiencePage() {
         {/* Core Competencies */}
         <div className="mb-12 bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
           <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <Award className="w-5 h-5 text-blue-400" />
+            <span className="text-blue-400">⭐</span>
             Core Competencies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {coreCompetencies.map((skill, index) => {
-              const Icon = skill.icon
-              return (
-                <div 
-                  key={index}
-                  className="flex items-center gap-2 bg-[#2a2a2a] px-3 py-2 rounded-lg border border-[#333] hover:border-blue-500/30 transition-colors"
-                >
-                  <Icon className={`w-4 h-4 ${skill.color}`} />
-                  <span className="text-gray-300 text-sm">{skill.name}</span>
-                </div>
-              )
-            })}
+            {coreCompetencies.map((skill, index) => (
+              <div 
+                key={index}
+                className="flex items-center gap-2 bg-[#2a2a2a] px-3 py-2 rounded-lg border border-[#333] hover:border-blue-500/30 transition-colors"
+              >
+                <span className="text-blue-400">▸</span>
+                <span className="text-gray-300 text-sm">{skill}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -337,7 +317,7 @@ export default function ExperiencePage() {
                 : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
             }`}
           >
-            All Experience
+            📌 All Experience
           </button>
           <button
             onClick={() => setFilter('self-employed')}
@@ -347,7 +327,7 @@ export default function ExperiencePage() {
                 : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
             }`}
           >
-            Self-Employed
+            🚀 Self-Employed
           </button>
           <button
             onClick={() => setFilter('contract')}
@@ -357,7 +337,7 @@ export default function ExperiencePage() {
                 : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
             }`}
           >
-            Contract
+            📋 Contract
           </button>
           <button
             onClick={() => setFilter('full-time')}
@@ -367,177 +347,174 @@ export default function ExperiencePage() {
                 : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-[#2a2a2a] hover:border-[#3a3a3a]'
             }`}
           >
-            Full-Time
+            💼 Full-Time
           </button>
         </div>
 
         {/* Experience Cards */}
         <div className="space-y-6">
-          {filteredExperiences.map((exp) => {
-            const Icon = exp.icon || Briefcase
-            return (
+          {filteredExperiences.map((exp) => (
+            <div 
+              key={exp.id}
+              className="group bg-[#1a1a1a] rounded-xl border border-[#2a2a2a] hover:border-blue-500/30 transition-all duration-300 overflow-hidden"
+            >
+              {/* Header - Always visible */}
               <div 
-                key={exp.id}
-                className="group bg-[#1a1a1a] rounded-xl border border-[#2a2a2a] hover:border-blue-500/30 transition-all duration-300 overflow-hidden"
+                className="p-6 cursor-pointer"
+                onClick={() => toggleExpand(exp.id)}
               >
-                {/* Header - Always visible */}
-                <div 
-                  className="p-6 cursor-pointer"
-                  onClick={() => toggleExpand(exp.id)}
-                >
-                  <div className="flex flex-wrap items-start justify-between gap-4">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <Icon className="w-5 h-5 text-blue-400" />
-                        <h2 className="text-xl font-semibold text-white">
-                          {exp.role}
-                        </h2>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getTypeColor(exp.type)}`}>
-                          {getTypeLabel(exp.type)}
-                        </span>
-                      </div>
-                      
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
-                        <span className="flex items-center gap-1.5">
-                          <Briefcase className="w-4 h-4" />
-                          {exp.company}
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <Calendar className="w-4 h-4" />
-                          {exp.period}
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <MapPin className="w-4 h-4" />
-                          {exp.location}
-                        </span>
-                      </div>
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-2 flex-wrap">
+                      <span className="text-xl">✈️</span>
+                      <h2 className="text-xl font-semibold text-white">
+                        {exp.role}
+                      </h2>
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getTypeColor(exp.type)}`}>
+                        {getTypeEmoji(exp.type)} {getTypeLabel(exp.type)}
+                      </span>
                     </div>
-
-                    <button 
-                      className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-[#2a2a2a] rounded-lg"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        toggleExpand(exp.id)
-                      }}
-                    >
-                      {expandedId === exp.id ? (
-                        <ChevronUp className="w-5 h-5" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5" />
-                      )}
-                    </button>
+                    
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+                      <span className="flex items-center gap-1.5">
+                        <span>🏢</span>
+                        {exp.company}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <span>📅</span>
+                        {exp.period}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <span>📍</span>
+                        {exp.location}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Technologies - Always visible */}
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {exp.technologies.slice(0, 6).map((tech) => (
-                      <span 
-                        key={tech}
-                        className="px-2.5 py-1 bg-[#2a2a2a] text-gray-400 rounded-md text-xs border border-[#333] hover:border-blue-500/30 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {exp.technologies.length > 6 && (
-                      <span className="px-2.5 py-1 text-gray-500 text-xs flex items-center">
-                        +{exp.technologies.length - 6} more
-                      </span>
+                  <button 
+                    className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-[#2a2a2a] rounded-lg"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      toggleExpand(exp.id)
+                    }}
+                  >
+                    {expandedId === exp.id ? (
+                      <span>▲</span>
+                    ) : (
+                      <span>▼</span>
                     )}
-                  </div>
+                  </button>
                 </div>
 
-                {/* Expanded Content */}
-                {expandedId === exp.id && (
-                  <div className="px-6 pb-6 pt-4 border-t border-[#2a2a2a] animate-in slide-in-from-top-2 duration-200">
-                    {/* Description */}
+                {/* Technologies - Always visible */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {exp.technologies.slice(0, 6).map((tech) => (
+                    <span 
+                      key={tech}
+                      className="px-2.5 py-1 bg-[#2a2a2a] text-gray-400 rounded-md text-xs border border-[#333] hover:border-blue-500/30 transition-colors"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {exp.technologies.length > 6 && (
+                    <span className="px-2.5 py-1 text-gray-500 text-xs flex items-center">
+                      +{exp.technologies.length - 6} more
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Expanded Content */}
+              {expandedId === exp.id && (
+                <div className="px-6 pb-6 pt-4 border-t border-[#2a2a2a]">
+                  {/* Description */}
+                  <div className="mb-4">
+                    <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
+                      <span>📋</span>
+                      Key Responsibilities
+                    </h3>
+                    <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
+                      {exp.description.map((item, idx) => (
+                        <li key={idx} className="leading-relaxed">{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Highlights / Achievements */}
+                  {exp.highlights && exp.highlights.length > 0 && (
                     <div className="mb-4">
                       <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
-                        <Briefcase className="w-4 h-4" />
-                        Key Responsibilities
+                        <span>⭐</span>
+                        Key Highlights
                       </h3>
                       <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
-                        {exp.description.map((item, idx) => (
-                          <li key={idx} className="leading-relaxed">{item}</li>
+                        {exp.highlights.map((highlight, idx) => (
+                          <li key={idx} className="leading-relaxed">{highlight}</li>
                         ))}
                       </ul>
                     </div>
+                  )}
 
-                    {/* Highlights / Achievements */}
-                    {exp.highlights && exp.highlights.length > 0 && (
-                      <div className="mb-4">
-                        <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
-                          <Award className="w-4 h-4 text-yellow-400" />
-                          Key Highlights
-                        </h3>
-                        <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
-                          {exp.highlights.map((highlight, idx) => (
-                            <li key={idx} className="leading-relaxed">{highlight}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                  {/* Detailed Achievements */}
+                  {exp.detailedAchievements && exp.detailedAchievements.length > 0 && (
+                    <div className="mb-4">
+                      <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
+                        <span>🏆</span>
+                        Detailed Achievements
+                      </h3>
+                      <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
+                        {exp.detailedAchievements.map((achievement, idx) => (
+                          <li key={idx} className="leading-relaxed">{achievement}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
-                    {/* Detailed Achievements */}
-                    {exp.detailedAchievements && exp.detailedAchievements.length > 0 && (
-                      <div className="mb-4">
-                        <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
-                          <Award className="w-4 h-4 text-blue-400" />
-                          Detailed Achievements
-                        </h3>
-                        <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm">
-                          {exp.detailedAchievements.map((achievement, idx) => (
-                            <li key={idx} className="leading-relaxed">{achievement}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Projects (for self-employed) */}
-                    {exp.projects && (
-                      <div className="mb-4">
-                        <h3 className="text-sm font-medium text-gray-400 mb-2">Projects</h3>
-                        <div className="flex flex-wrap gap-3">
-                          {exp.projects.map((project) => (
-                            <a
-                              key={project.name}
-                              href={project.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#2a2a2a] text-blue-400 rounded-lg text-sm hover:bg-[#333] transition-colors"
-                            >
-                              {project.name}
-                              <ExternalLink className="w-3.5 h-3.5" />
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* All Technologies */}
-                    <div className="pt-4 border-t border-[#2a2a2a]">
-                      <h3 className="text-sm font-medium text-gray-400 mb-2">Technologies Used</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech) => (
-                          <span 
-                            key={tech}
-                            className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs border border-blue-500/20 hover:bg-blue-500/20 transition-colors"
+                  {/* Projects (for self-employed) */}
+                  {exp.projects && (
+                    <div className="mb-4">
+                      <h3 className="text-sm font-medium text-gray-400 mb-2">Projects</h3>
+                      <div className="flex flex-wrap gap-3">
+                        {exp.projects.map((project) => (
+                          <a
+                            key={project.name}
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1.5 px-3 py-1.5 bg-[#2a2a2a] text-blue-400 rounded-lg text-sm hover:bg-[#333] transition-colors"
                           >
-                            {tech}
-                          </span>
+                            {project.name}
+                            <span>↗</span>
+                          </a>
                         ))}
                       </div>
                     </div>
+                  )}
+
+                  {/* All Technologies */}
+                  <div className="pt-4 border-t border-[#2a2a2a]">
+                    <h3 className="text-sm font-medium text-gray-400 mb-2">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <span 
+                          key={tech}
+                          className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs border border-blue-500/20 hover:bg-blue-500/20 transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                )}
-              </div>
-            )
-          })}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Technical Skills Section */}
         <div className="mt-16 bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
           <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-            <Code className="w-5 h-5 text-blue-400" />
+            <span className="text-blue-400">💻</span>
             Technical Skills
           </h2>
           
@@ -613,7 +590,7 @@ export default function ExperiencePage() {
         {/* Education Section */}
         <div className="mt-8 bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a]">
           <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <GraduationCap className="w-5 h-5 text-blue-400" />
+            <span className="text-blue-400">🎓</span>
             Education
           </h2>
           <div className="space-y-4">
