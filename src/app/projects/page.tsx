@@ -19,6 +19,7 @@ export default function Projects() {
       ],
       link: "https://shelfforce.co.za",
       live: true,
+      buttonText: "Visit ShelfForce →", // Added this
     },
     {
       title: "SIAKA School Uniforms",
@@ -39,6 +40,7 @@ export default function Projects() {
       ],
       link: "https://siaka.co.za",
       live: true,
+      buttonText: "Visit SIAKA →", // Added this
     },
     {
       title: "iQula Lakwa Ntu",
@@ -59,6 +61,7 @@ export default function Projects() {
       ],
       link: "https://iqulalakwantu.co.za",
       live: true,
+      buttonText: "Visit iQula →", // Added this
     },
   ];
 
@@ -114,14 +117,14 @@ export default function Projects() {
               ))}
             </div>
 
-            {/* Link */}
+            {/* Link - Updated with project-specific text */}
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center text-sm"
             >
-              Visit Link
+              {project.buttonText}
             </a>
           </div>
         ))}
