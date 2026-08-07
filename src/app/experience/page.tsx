@@ -9,7 +9,7 @@ const experiences = [
     company: 'Self-Employed',
     role: 'Application Developer',
     period: '01 April 2026 – Current',
-    location: 'Cape Town, South Africa',
+    location: 'Pretoria, South Africa',
     category: 'freelance',
     description: [
       'Application Support & End-User Training',
