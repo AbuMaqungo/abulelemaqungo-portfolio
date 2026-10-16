@@ -13,14 +13,15 @@ export default function Home() {
             </h1>
 
             <h2 className="text-xl md:text-2xl text-indigo-400 mb-6 font-mono">
-              Application Developer
+              Data Engineer & Full-Stack Developer
             </h2>
 
             <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-              Results-driven Application Developer with hands-on experience delivering enterprise-grade
-              software solutions within high-impact environments. Specializing in full-stack development,
-              SQL programming, database performance optimization and cloud-native deployment across
-              modern infrastructure.
+              Data Engineer with a BSc Honours in Computer Science and 3+ years of hands-on experience
+              designing, building and administering data systems in high-impact environments. Proven ability
+              to build ETL pipelines, administer SQL Server and PostgreSQL databases, and automate data
+              workflows using Python. Former Database Administrator at the Department of Home Affairs,
+              maintaining data integrity across systems serving 400+ branches nationwide.
             </p>
 
             {/* Qualifications */}
@@ -31,6 +32,7 @@ export default function Home() {
                   "BSc (Hons) Computer Science",
                   "BSc Computer Science, GIS & Remote Sensing",
                   "Aircraft Avionician — Denel Technical Academy",
+                  "Data Engineering on AWS — Foundations",
                 ].map((q) => (
                   <div key={q} className="flex items-center">
                     <div className="w-2 h-2 bg-indigo-400 rounded-full mr-3 flex-shrink-0"></div>

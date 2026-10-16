@@ -9,8 +9,8 @@ export default function About() {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">About Me</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Application Developer with a background spanning aviation technology and enterprise software,
-            bringing precision engineering discipline to every digital solution.
+            Data Engineer & Full-Stack Developer with a background spanning aviation technology,
+            enterprise software and data systems — bringing precision engineering discipline to every solution.
           </p>
         </div>
 
@@ -38,26 +38,27 @@ export default function About() {
                   </div>
                   <div className="flex-1 text-center md:text-left">
                     <h2 className="text-2xl font-bold text-white mb-2">My Journey</h2>
-                    <p className="text-indigo-400 font-medium">From aircraft avionics to enterprise software development</p>
+                    <p className="text-indigo-400 font-medium">From aircraft avionics to data engineering</p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <p className="text-slate-300 leading-relaxed">
-                    I'm an Application Developer with a unique background spanning aviation technology
-                    and enterprise software. My career began in aircraft avionics, where I developed
-                    a deep understanding of complex systems, precision fault diagnosis and compliance
-                    with safety-critical procedures.
+                    I'm a Data Engineer with a unique background spanning aviation technology and enterprise
+                    software. My career began in aircraft avionics, where I developed a deep understanding
+                    of complex systems, precision fault diagnosis and compliance with safety-critical procedures.
                   </p>
                   <p className="text-slate-300 leading-relaxed">
-                    Transitioning into software development, I brought that same discipline to building
-                    and supporting enterprise applications at the Department of Home Affairs — systems
-                    serving over 400 branches nationwide — while simultaneously building three live
-                    production platforms as a self-employed developer.
+                    Transitioning into software and data engineering, I brought that same discipline to
+                    building and administering data systems at the Department of Home Affairs — serving
+                    over 400 branches nationwide — while simultaneously delivering a multi-domain Financial
+                    Intelligence Platform spanning banking, insurance, economics and aviation as a
+                    self-employed Data Engineer.
                   </p>
                   <p className="text-slate-300 leading-relaxed">
-                    I hold a BSc Honours in Computer Science from the University of Fort Hare and
-                    specialize in full-stack development, SQL programming and cloud-native infrastructure.
+                    I hold a BSc Honours in Computer Science from the University of Fort Hare and specialise
+                    in ETL pipeline development, PostgreSQL and SQL Server administration, Python data
+                    engineering, machine learning and full-stack development.
                   </p>
                 </div>
               </div>
@@ -65,9 +66,9 @@ export default function About() {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-slate-700">
                 {[
-                  { value: "3+", label: "Years in Software Dev", color: "text-indigo-400" },
-                  { value: "3", label: "Live Production Platforms", color: "text-indigo-400" },
-                  { value: "20+", label: "Technologies", color: "text-indigo-400" },
+                  { value: "3+", label: "Years in Data & Software", color: "text-indigo-400" },
+                  { value: "5", label: "Live Production Platforms", color: "text-indigo-400" },
+                  { value: "30+", label: "Technologies", color: "text-indigo-400" },
                   { value: "400+", label: "Branches Supported", color: "text-indigo-400" },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
@@ -80,13 +81,13 @@ export default function About() {
 
             {/* Philosophy */}
             <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700">
-              <h2 className="text-2xl font-bold text-white mb-6">Development Philosophy</h2>
+              <h2 className="text-2xl font-bold text-white mb-6">Engineering Philosophy</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { icon: "⚡", title: "Performance", desc: "Building fast, efficient applications that scale gracefully", color: "bg-indigo-600" },
+                  { icon: "⚡", title: "Performance", desc: "Building fast, efficient data pipelines and applications that scale gracefully", color: "bg-indigo-600" },
                   { icon: "🎯", title: "Precision", desc: "Engineering discipline carried over from safety-critical avionics work", color: "bg-indigo-600" },
-                  { icon: "🔧", title: "Quality", desc: "Writing clean, maintainable and thoroughly tested code", color: "bg-indigo-600" },
-                  { icon: "🚀", title: "Delivery", desc: "End-to-end ownership from architecture through production deployment", color: "bg-indigo-600" },
+                  { icon: "🔧", title: "Quality", desc: "Writing clean, maintainable and thoroughly tested code and pipelines", color: "bg-indigo-600" },
+                  { icon: "🚀", title: "Delivery", desc: "End-to-end ownership from schema design through production deployment", color: "bg-indigo-600" },
                 ].map((item) => (
                   <div key={item.title} className="text-center">
                     <div className={`w-12 h-12 ${item.color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
@@ -110,6 +111,7 @@ export default function About() {
                 <div>
                   <h4 className="font-semibold text-indigo-400">BSc (Hons) in Computer Science</h4>
                   <p className="text-slate-400 text-sm">University of Fort Hare · 2021</p>
+                  <p className="text-slate-500 text-xs mt-1">Research: Real-time Twitter sentiment analysis using ML and NLP</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-indigo-400">BSc Computer Science, GIS & Remote Sensing</h4>
@@ -128,7 +130,17 @@ export default function About() {
               <div className="space-y-3">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-indigo-400 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <p className="text-slate-300 text-sm">Aircraft Avionician — Certificate No. 10/11/007, Denel Technical Academy</p>
+                  <div>
+                    <p className="text-slate-300 text-sm font-medium">Data Engineering on AWS — Foundations</p>
+                    <p className="text-slate-500 text-xs">Amazon Web Services · 2026</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-indigo-400 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p className="text-slate-300 text-sm font-medium">QCTO-Certified Aircraft Avionician</p>
+                    <p className="text-slate-500 text-xs">Denel Technical Academy · Cert No. 10/11/007</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -138,16 +150,18 @@ export default function About() {
               <h3 className="text-xl font-semibold text-white mb-4">Core Competencies</h3>
               <div className="space-y-2">
                 {[
-                  "Full-Stack Web Development (React, Next.js)",
-                  "REST API Design & Development",
-                  "API Testing & Validation (Postman)",
-                  "Regression & System Testing",
+                  "ETL Pipeline Design & Development",
+                  "PostgreSQL, SQL Server & Azure SQL",
+                  "Python Data Engineering (pandas, psycopg2)",
+                  "Machine Learning (scikit-learn)",
+                  "Power BI & Looker Studio Dashboards",
+                  "Star Schema & Data Modelling",
+                  "REST API Design (FastAPI, ASP.NET Core)",
+                  "Full-Stack Development (React, Next.js)",
                   "Docker & CI/CD Pipelines",
-                  "SQL Server, PostgreSQL & Azure SQL",
-                  "SQL Programming & Query Optimization",
-                  "Cloud Infrastructure & DNS Configuration",
-                  "Version Control (GitLab, GitHub)",
-                  "Application Support & End-User Training",
+                  "Cloud Infrastructure (AWS, Azure, Vercel)",
+                  "Version Control (GitHub, GitLab)",
+                  "Data Quality & Governance",
                 ].map((c) => (
                   <div key={c} className="flex items-start">
                     <div className="w-2 h-2 bg-indigo-400 rounded-full mr-3 mt-2 flex-shrink-0"></div>
@@ -160,7 +174,7 @@ export default function About() {
             {/* CTA */}
             <div className="bg-indigo-700 rounded-2xl p-6 text-center border border-indigo-600">
               <h3 className="text-xl font-semibold text-white mb-2">Let's Work Together</h3>
-              <p className="text-indigo-200 text-sm mb-4">Open to new opportunities in software development.</p>
+              <p className="text-indigo-200 text-sm mb-4">Open to Data Engineering and full-stack opportunities.</p>
               <Link
                 href="/contact"
                 className="bg-white text-indigo-700 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors inline-block"
