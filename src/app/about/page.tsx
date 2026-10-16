@@ -46,24 +46,24 @@ export default function About() {
                   <p className="text-slate-300 leading-relaxed">
                     I am a Data Engineer with a BSc Honours in Computer Science, specialising in ETL
                     pipeline development, PostgreSQL and SQL Server administration, Python data engineering
-                    and machine learning. I design and build end-to-end data systems — from schema design
+                    and Machine Learning. I design and build end-to-end data systems — from schema design
                     and data generation through to analytics dashboards and predictive models.
                   </p>
                   <p className="text-slate-300 leading-relaxed">
-                    Alongside my data engineering work, I am a full-stack Application Developer — delivering
-                    live production platforms using FastAPI, React, Next.js, ASP.NET Core and cloud
+                    Alongside my data engineering work, I am a Full-Stack Application Developer — delivering
+                    live production platforms using FastAPI, React, Next.js, JavaScript ASP.NET Core and cloud
                     infrastructure across AWS, Azure and Vercel. I have built and deployed five live
                     platforms serving real businesses in South Africa.
                   </p>
                   <p className="text-slate-300 leading-relaxed">
                     My foundation was built at the Department of Home Affairs, where as a Database
                     Administrator I maintained data integrity across SQL Server systems serving 400+
-                    branches nationwide — writing complex diagnostic SQL, automating workflows with
+                    branches nationwide including central database, writing complex diagnostic SQL, automating workflows with
                     Python and managing GitLab CI/CD pipelines.
                   </p>
                   <p className="text-slate-300 leading-relaxed">
-                    Before tech, I was a QCTO-certified Aircraft Avionician — trade tested at OR Tambo,
-                    Lanseria and Wonderboom airports, working on MD80, Boeing 727 and B737 series aircraft.
+                    Before joining IT tech, I also hold qualification in QCTO-certified Aircraft Avionician. Successfully completed my Apprenticeship at OR Tambo,
+                    Lanseria and Wonderboom airports, working on MD80, Leajet, Falcon, Boeing 727 and B737 series aircraft.
                     That background in safety-critical systems, precision fault diagnosis and technical
                     documentation is what drives the discipline and rigour I bring to every data and
                     software solution today.
