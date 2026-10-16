@@ -1,7 +1,3 @@
-'use client'
-
-import { useState } from 'react'
-
 const experiences = [
   {
     id: 1,
@@ -117,7 +113,7 @@ const experiences = [
       'Collaborated with Database Systems Engineers on backup procedures, security protocols and replication strategies',
       'Designed and executed comprehensive API test suites using Postman covering functional correctness, authentication flows (JWT, session tokens), error handling and payload validation',
       'Created reusable Postman collections with environment variables for consistent testing across development, staging and production environments',
-      'Planned and executed structured regression testing cycles for DHA Live Capture (front office and back office), Electronic Travel Authorisation (ETA) and Reinstatement of Citizenship (ROC) systems',
+      'Planned and executed structured regression testing cycles for DHA Live Capture, Electronic Travel Authorisation (ETA) and Reinstatement of Citizenship (ROC) systems',
       'Managed GitLab CI/CD pipelines to automate build, test and deployment workflows; maintained feature branches, merge requests and code reviews',
       'Logged defects with detailed reproduction steps in JIRA and collaborated with development teams on resolution',
     ],
@@ -227,10 +223,10 @@ const experiences = [
       'Studied Mechanics of Flight and Trade Theory in accordance with Manpower Training Act 1981',
       'Completed structured training in Basic Electronics and Basic Digital Techniques',
       'Trained in Syncro & Servos systems — electromechanical feedback control loops',
-      "Applied Basic Electricity principles (Ohm's Law, circuit analysis, AC/DC theory)",
+      'Applied Basic Electricity principles (Ohm\'s Law, circuit analysis, AC/DC theory)',
       'Completed Soldering & Desoldering training to professional trade standard',
     ],
-    technologies: ['Basic Electronics', 'Digital Techniques', 'Syncro & Servos', "Ohm's Law", 'Circuit Analysis', 'Soldering', 'PCB Assembly'],
+    technologies: ['Basic Electronics', 'Digital Techniques', 'Syncro & Servos', 'Ohm\'s Law', 'Circuit Analysis', 'Soldering', 'PCB Assembly'],
     highlights: [
       'Certificate No. 10/11/007 issued by Denel Technical Academy',
       'Foundation for hardware repair, server component handling, and electronics-level IT maintenance',
