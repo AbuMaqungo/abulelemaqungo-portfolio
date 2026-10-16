@@ -42,23 +42,31 @@ export default function About() {
                   </div>
                 </div>
 
-                <div className="space-y-4">
+               <div className="space-y-4">
                   <p className="text-slate-300 leading-relaxed">
-                    I'm a Data Engineer with a unique background spanning aviation technology and enterprise
-                    software. My career began in aircraft avionics, where I developed a deep understanding
-                    of complex systems, precision fault diagnosis and compliance with safety-critical procedures.
+                    I am a Data Engineer with a BSc Honours in Computer Science, specialising in ETL
+                    pipeline development, PostgreSQL and SQL Server administration, Python data engineering
+                    and machine learning. I design and build end-to-end data systems — from schema design
+                    and data generation through to analytics dashboards and predictive models.
                   </p>
                   <p className="text-slate-300 leading-relaxed">
-                    Transitioning into software and data engineering, I brought that same discipline to
-                    building and administering data systems at the Department of Home Affairs — serving
-                    over 400 branches nationwide — while simultaneously delivering a multi-domain Financial
-                    Intelligence Platform spanning banking, insurance, economics and aviation as a
-                    self-employed Data Engineer.
+                    Alongside my data engineering work, I am a full-stack Application Developer — delivering
+                    live production platforms using FastAPI, React, Next.js, ASP.NET Core and cloud
+                    infrastructure across AWS, Azure and Vercel. I have built and deployed five live
+                    platforms serving real businesses in South Africa.
                   </p>
                   <p className="text-slate-300 leading-relaxed">
-                    I hold a BSc Honours in Computer Science from the University of Fort Hare and specialise
-                    in ETL pipeline development, PostgreSQL and SQL Server administration, Python data
-                    engineering, machine learning and full-stack development.
+                    My foundation was built at the Department of Home Affairs, where as a Database
+                    Administrator I maintained data integrity across SQL Server systems serving 400+
+                    branches nationwide — writing complex diagnostic SQL, automating workflows with
+                    Python and managing GitLab CI/CD pipelines.
+                  </p>
+                  <p className="text-slate-300 leading-relaxed">
+                    Before tech, I was a QCTO-certified Aircraft Avionician — trade tested at OR Tambo,
+                    Lanseria and Wonderboom airports, working on MD80, Boeing 727 and B737 series aircraft.
+                    That background in safety-critical systems, precision fault diagnosis and technical
+                    documentation is what drives the discipline and rigour I bring to every data and
+                    software solution today.
                   </p>
                 </div>
               </div>
