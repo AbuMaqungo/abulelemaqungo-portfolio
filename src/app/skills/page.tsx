@@ -8,12 +8,15 @@ export default function Skills() {
         "SQLAlchemy", "T-SQL", "Stored Procedures", "Query Optimisation",
       ],
     },
-    {
-      category: "Analytics & Business Intelligence",
+        {
+      category: "Data Analytics & Visualisation",
       skills: [
-        "Power BI Desktop", "DAX Measures", "Google Looker Studio",
-        "SQL Views & Aggregations", "Statistical Analysis",
-        "matplotlib", "seaborn",
+        "SQL Views & Aggregations", "Exploratory Data Analysis (EDA)",
+        "Statistical Analysis", "Data Validation & Verification",
+        "Time-Series Analysis", "DATE_TRUNC Windowing",
+        "Derived Financial Metrics", "Power BI Desktop",
+        "DAX Measures", "Google Looker Studio",
+        "matplotlib", "seaborn", "Recharts",
       ],
     },
     {
