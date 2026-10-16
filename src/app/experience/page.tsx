@@ -78,7 +78,6 @@ const experiences = [
       'Containerised SIAKA deployment via Docker on Render with Cloudflare DNS',
       'Delivered iQula Lakwa Ntu enterprise platform with FastAPI backend, React/Vite frontend, SQLAlchemy ORM and PostgreSQL on Neon',
     ],
-    projects: [],
   },
   {
     id: 3,
@@ -92,13 +91,22 @@ const experiences = [
       'Application support and sustenance for production environments across multiple business areas',
       'Developing T-SQL and Python automation scripts to streamline routine database maintenance',
       'Monitoring data pipelines and application flows across enterprise systems',
-      'Technical support and training to end users',
+      'API Testing & Validation using Postman across all development streams',
+      'Regression Testing for DHA Live Capture (Front Office & Back Office)',
+      'Regression Testing for Electronic Travel Authorisation (ETA) & Reinstatement of Citizenship (ROC)',
+      'Managing GitLab CI/CD pipelines to automate build, test and deployment workflows',
     ],
-    technologies: ['SQL Server', 'T-SQL', 'Python', 'Remote Desktop', 'Visual Studio 2022', 'Azure SQL', 'SSMS', 'GitLab'],
+    technologies: [
+      'SQL Server', 'T-SQL', 'Python', 'SSMS', 'Visual Studio 2022',
+      'Azure SQL', 'GitLab', 'Postman', 'JIRA', 'CI/CD',
+      'API Testing', 'Regression Testing', 'JWT', 'Docker',
+    ],
     highlights: [
       'Administered SQL Server databases across 400+ branch locations — monitoring performance, implementing replication and maintaining data integrity',
       'Executed complex diagnostic SQL queries to resolve stuck applications across passport and ID processing systems',
-      'Developed T-SQL and Python automation scripts eliminating manual bottlenecks',
+      'Developed T-SQL and Python automation scripts eliminating manual maintenance bottlenecks',
+      'Designed and executed comprehensive API test suites covering functional correctness, authentication flows and edge-case scenarios',
+      'Planned and executed structured regression testing for the DHA Live Capture, ETA and ROC systems',
     ],
     detailedAchievements: [
       'Administered SQL Server databases across central and 400+ branch locations — monitoring performance, implementing replication and ensuring data consistency',
@@ -107,7 +115,11 @@ const experiences = [
       'Developed T-SQL and Python automation scripts to streamline routine database maintenance tasks',
       'Monitored data pipelines and application flows, proactively identifying and resolving performance degradation',
       'Collaborated with Database Systems Engineers on backup procedures, security protocols and replication strategies',
-      'Provided technical support and created documentation for non-technical stakeholders',
+      'Designed and executed comprehensive API test suites using Postman covering functional correctness, authentication flows (JWT, session tokens), error handling and payload validation',
+      'Created reusable Postman collections with environment variables for consistent testing across development, staging and production environments',
+      'Planned and executed structured regression testing cycles for DHA Live Capture, Electronic Travel Authorisation (ETA) and Reinstatement of Citizenship (ROC) systems',
+      'Managed GitLab CI/CD pipelines to automate build, test and deployment workflows; maintained feature branches, merge requests and code reviews',
+      'Logged defects with detailed reproduction steps in JIRA and collaborated with development teams on resolution',
     ],
     projects: [],
   },
@@ -125,7 +137,10 @@ const experiences = [
       'Creating new network systems using GNS3 and subnetting',
       'Joining new servers and computers to DHA domain',
     ],
-    technologies: ['Cisco Unified CM', 'GNS3', 'PuTTY', 'SCOM', 'Manage Engine', 'Active Directory', 'GroupWise', 'Outlook'],
+    technologies: [
+      'Cisco Unified CM', 'GNS3', 'PuTTY', 'SCOM',
+      'Manage Engine', 'Active Directory', 'GroupWise', 'Outlook',
+    ],
     highlights: [
       'Migrated DHA users from GroupWise to Outlook',
       'Configured switches, routers and network systems across department branches',
@@ -152,7 +167,10 @@ const experiences = [
       'Tested and configured VHF/UHF radio navigation systems including VOR, DME, and ADF',
       'Performed Landing Gear and Anti-Skid System functional testing',
     ],
-    technologies: ['RF Communications', 'VOR', 'DME', 'ADF', 'Aircraft Wiring Manuals', 'CAA Procedures', 'Signal Testing'],
+    technologies: [
+      'RF Communications', 'VOR', 'DME', 'ADF',
+      'Aircraft Wiring Manuals', 'CAA Procedures', 'Signal Testing',
+    ],
     highlights: [
       'Developed practical knowledge of RF communications protocols and frequency management',
       'Validated sensor feedback loops — translatable to industrial control systems and embedded IoT device testing',
@@ -173,7 +191,9 @@ const experiences = [
       'Performed Landing Gear and Anti-Skid System functional testing',
       'Performed complete functional testing of cockpit instrument systems',
     ],
-    technologies: ['ULB', 'Flight Data Recorder', 'HSI', 'AI', 'ELT', 'Gyro Units', 'Diagnostic Tools'],
+    technologies: [
+      'ULB', 'Flight Data Recorder', 'HSI', 'ELT', 'Gyro Units', 'Diagnostic Tools',
+    ],
     highlights: [
       'Critical data recording and telemetry systems analogous to enterprise data logging and IT audit trail systems',
       'Equivalent to IT systems baseline acceptance testing and hardware commissioning',
@@ -195,7 +215,10 @@ const experiences = [
       'Tested and configured VHF/UHF radio navigation systems including VOR, DME, and ADF',
       'Performed Landing Gear and Anti-Skid System functional testing',
     ],
-    technologies: ['Pitot-Static Systems', 'Digital Manometers', 'ILS', 'VOR', 'DME', 'ADF', 'RF Communications', 'ICAO Doc 8168'],
+    technologies: [
+      'Pitot-Static Systems', 'Digital Manometers', 'ILS',
+      'VOR', 'DME', 'ADF', 'RF Communications', 'ICAO Doc 8168',
+    ],
     highlights: [
       'Structured troubleshooting methodologies consistent with ICT systems fault isolation',
       'Signal processing verification and localizer/glideslope system testing',
@@ -215,10 +238,13 @@ const experiences = [
       'Studied Mechanics of Flight and Trade Theory in accordance with Manpower Training Act 1981',
       'Completed structured training in Basic Electronics and Basic Digital Techniques',
       'Trained in Syncro & Servos systems — electromechanical feedback control loops',
-      'Applied Basic Electricity principles (Ohm\'s Law, circuit analysis, AC/DC theory)',
+      "Applied Basic Electricity principles (Ohm's Law, circuit analysis, AC/DC theory)",
       'Completed Soldering & Desoldering training to professional trade standard',
     ],
-    technologies: ['Basic Electronics', 'Digital Techniques', 'Syncro & Servos', 'Ohm\'s Law', 'Circuit Analysis', 'Soldering', 'PCB Assembly'],
+    technologies: [
+      'Basic Electronics', 'Digital Techniques', 'Syncro & Servos',
+      "Ohm's Law", 'Circuit Analysis', 'Soldering', 'PCB Assembly',
+    ],
     highlights: [
       'Certificate No. 10/11/007 issued by Denel Technical Academy',
       'Foundation for hardware repair, server component handling, and electronics-level IT maintenance',
@@ -247,14 +273,36 @@ const coreCompetencies = [
 ]
 
 const technicalSkills = {
-  dataEngineering: ['ETL Pipeline Development', 'Star Schema', 'Data Modelling', 'Data Warehousing', 'psycopg2', 'pandas', 'Faker', 'SQLAlchemy', 'T-SQL', 'Stored Procedures', 'Query Optimisation'],
-  analyticsAndBI: ['Power BI Desktop', 'DAX Measures', 'Google Looker Studio', 'SQL Views & Aggregations', 'Statistical Analysis', 'matplotlib', 'seaborn'],
-  dataScience: ['scikit-learn', 'Random Forest', 'Logistic Regression', 'Linear Regression', 'Forecasting & Predictive Modelling', 'Google Colab', 'Confusion Matrix', 'Feature Importance'],
-  languages: ['Python', 'SQL', 'T-SQL', 'C#', 'JavaScript', 'TypeScript', 'Java', 'HTML5', 'CSS3'],
-  frameworks: ['FastAPI', 'ASP.NET Core (.NET 8)', 'React', 'Next.js 16', 'Tailwind CSS v4', 'Framer Motion', 'SQLAlchemy', 'Entity Framework Core', 'Spring Boot'],
-  databases: ['PostgreSQL (Neon)', 'Azure SQL Database', 'Microsoft SQL Server', 'MySQL'],
-  devops: ['Docker', 'CI/CD (GitHub → Vercel / Render)', 'GitLab CI/CD', 'Cloudflare DNS', 'Vercel', 'Render', 'Azure App Service'],
-  tools: ['PyCharm', 'VS Code', 'Visual Studio Enterprise 2022', 'IntelliJ Ultimate', 'DBeaver', 'Postman', 'Power BI Desktop', 'Google Colab', 'SSMS', 'Git', 'GitHub', 'GitLab', 'Jira'],
+  dataEngineering: [
+    'ETL Pipeline Development', 'Star Schema', 'Data Modelling', 'Data Warehousing',
+    'psycopg2', 'pandas', 'Faker', 'SQLAlchemy', 'T-SQL', 'Stored Procedures', 'Query Optimisation',
+  ],
+  analyticsAndBI: [
+    'Power BI Desktop', 'DAX Measures', 'Google Looker Studio',
+    'SQL Views & Aggregations', 'Statistical Analysis', 'matplotlib', 'seaborn',
+  ],
+  dataScience: [
+    'scikit-learn', 'Random Forest', 'Logistic Regression', 'Linear Regression',
+    'Forecasting & Predictive Modelling', 'Google Colab', 'Confusion Matrix', 'Feature Importance',
+  ],
+  languages: [
+    'Python', 'SQL', 'T-SQL', 'C#', 'JavaScript', 'TypeScript', 'Java', 'HTML5', 'CSS3',
+  ],
+  frameworks: [
+    'FastAPI', 'ASP.NET Core (.NET 8)', 'React', 'Next.js 16',
+    'Tailwind CSS v4', 'Framer Motion', 'SQLAlchemy', 'Entity Framework Core', 'Spring Boot',
+  ],
+  databases: [
+    'PostgreSQL (Neon)', 'Azure SQL Database', 'Microsoft SQL Server', 'MySQL',
+  ],
+  devops: [
+    'Docker', 'CI/CD (GitHub → Vercel / Render)', 'GitLab CI/CD',
+    'Cloudflare DNS', 'Vercel', 'Render', 'Azure App Service',
+  ],
+  tools: [
+    'PyCharm', 'VS Code', 'Visual Studio Enterprise 2022', 'IntelliJ Ultimate',
+    'DBeaver', 'Postman', 'Power BI Desktop', 'Google Colab', 'SSMS', 'Git', 'GitHub', 'GitLab', 'Jira',
+  ],
 }
 
 export default function ExperiencePage() {
@@ -351,7 +399,7 @@ export default function ExperiencePage() {
               key={exp.id}
               className="bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/30 transition-all duration-300 overflow-hidden"
             >
-              {/* Header */}
+              {/* Card Header */}
               <div className="p-6 cursor-pointer" onClick={() => toggleExpand(exp.id)}>
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
@@ -377,15 +425,20 @@ export default function ExperiencePage() {
                   </button>
                 </div>
 
-                {/* Technologies preview */}
+                {/* Technologies Preview */}
                 <div className="flex flex-wrap gap-2 mt-4">
                   {exp.technologies.slice(0, 6).map((tech) => (
-                    <span key={tech} className="px-2.5 py-1 bg-slate-700 text-slate-300 rounded-md text-xs border border-slate-600 hover:border-indigo-500/30 transition-colors">
+                    <span
+                      key={tech}
+                      className="px-2.5 py-1 bg-slate-700 text-slate-300 rounded-md text-xs border border-slate-600 hover:border-indigo-500/30 transition-colors"
+                    >
                       {tech}
                     </span>
                   ))}
                   {exp.technologies.length > 6 && (
-                    <span className="px-2.5 py-1 text-slate-500 text-xs">+{exp.technologies.length - 6} more</span>
+                    <span className="px-2.5 py-1 text-slate-500 text-xs">
+                      +{exp.technologies.length - 6} more
+                    </span>
                   )}
                 </div>
               </div>
@@ -393,6 +446,8 @@ export default function ExperiencePage() {
               {/* Expanded Content */}
               {expandedId === exp.id && (
                 <div className="px-6 pb-6 pt-4 border-t border-slate-700">
+
+                  {/* Responsibilities */}
                   <div className="mb-4">
                     <h3 className="text-sm font-medium text-slate-400 mb-2">Key Responsibilities</h3>
                     <ul className="list-disc list-inside space-y-1.5 text-slate-300 text-sm">
@@ -402,6 +457,7 @@ export default function ExperiencePage() {
                     </ul>
                   </div>
 
+                  {/* Highlights */}
                   {exp.highlights && exp.highlights.length > 0 && (
                     <div className="mb-4">
                       <h3 className="text-sm font-medium text-slate-400 mb-2">Key Highlights</h3>
@@ -413,6 +469,7 @@ export default function ExperiencePage() {
                     </div>
                   )}
 
+                  {/* Detailed Achievements */}
                   {exp.detailedAchievements && exp.detailedAchievements.length > 0 && (
                     <div className="mb-4">
                       <h3 className="text-sm font-medium text-slate-400 mb-2">Detailed Achievements</h3>
@@ -424,6 +481,7 @@ export default function ExperiencePage() {
                     </div>
                   )}
 
+                  {/* Live Projects */}
                   {exp.projects && exp.projects.length > 0 && (
                     <div className="mb-4">
                       <h3 className="text-sm font-medium text-slate-400 mb-2">Live Projects</h3>
@@ -443,16 +501,21 @@ export default function ExperiencePage() {
                     </div>
                   )}
 
+                  {/* All Technologies */}
                   <div className="pt-4 border-t border-slate-700">
                     <h3 className="text-sm font-medium text-slate-400 mb-2">Technologies Used</h3>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs border border-indigo-500/20 hover:bg-indigo-500/20 transition-colors">
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs border border-indigo-500/20 hover:bg-indigo-500/20 transition-colors"
+                        >
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
+
                 </div>
               )}
             </div>
@@ -477,7 +540,10 @@ export default function ExperiencePage() {
                 <h3 className="text-sm font-medium text-slate-400 mb-2">{section.label}</h3>
                 <div className="flex flex-wrap gap-2">
                   {section.skills.map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs border border-slate-600">
+                    <span
+                      key={skill}
+                      className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs border border-slate-600"
+                    >
                       {skill}
                     </span>
                   ))}
@@ -493,9 +559,21 @@ export default function ExperiencePage() {
           <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
             <div className="space-y-4">
               {[
-                { degree: 'Bachelor of Science (Honours) in Computer Science', school: 'University of Fort Hare | 2021', note: 'Research: Real-time Twitter sentiment analysis using ML and NLP to classify reactions to national policy announcements' },
-                { degree: 'Bachelor of Science in Computer Science, GIS & Remote Sensing', school: 'University of Fort Hare | 2020', note: '' },
-                { degree: 'Grade 12 / Matric', school: 'Msobomvu Senior Secondary School | 2015', note: '' },
+                {
+                  degree: 'Bachelor of Science (Honours) in Computer Science',
+                  school: 'University of Fort Hare | 2021',
+                  note: 'Research: Real-time Twitter sentiment analysis using ML and NLP to classify reactions to national policy announcements',
+                },
+                {
+                  degree: 'Bachelor of Science in Computer Science, GIS & Remote Sensing',
+                  school: 'University of Fort Hare | 2020',
+                  note: '',
+                },
+                {
+                  degree: 'Grade 12 / Matric',
+                  school: 'Msobomvu Senior Secondary School | 2015',
+                  note: '',
+                },
               ].map((edu) => (
                 <div key={edu.degree} className="border-l-2 border-indigo-500/50 pl-4">
                   <h3 className="text-white font-medium">{edu.degree}</h3>
